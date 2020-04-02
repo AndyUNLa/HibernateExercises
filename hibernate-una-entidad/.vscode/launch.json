@@ -1,0 +1,182 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - TestTraerClientes",
+            "request": "launch",
+            "mainClass": "test.TestTraerClientes",
+            "projectName": "HibernateUnaEntidad"
+        },
+        {
+            "name": "Java",
+            "type": "java",
+            "request": "launch",
+            "stopOnEntry": true,
+            "jdkPath": "${env:JAVA_HOME}/bin",
+            "cwd": "${fileDirname}",
+            "startupClass": "${fileBasenameNoExtension}",
+            "classpath": [
+                ".",
+                "${fileDirname}"
+            ]
+        },
+        {
+            "name": "Java Console App",
+            "type": "java",
+            "request": "launch",
+            "stopOnEntry": true,
+            "jdkPath": "${env:JAVA_HOME}/bin",
+            "cwd": "${fileDirname}",
+            "startupClass": "${fileBasenameNoExtension}",
+            "classpath": [
+                ".",
+                "${fileDirname}"
+            ],
+            "externalConsole": true
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch) - Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-ASTFrame<HibernateUnaEntidad>",
+            "request": "launch",
+            "mainClass": "antlr.debug.misc.ASTFrame",
+            "projectName": "HibernateUnaEntidad"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Tool<HibernateUnaEntidad>",
+            "request": "launch",
+            "mainClass": "antlr.preprocessor.Tool",
+            "projectName": "HibernateUnaEntidad"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-PropertiesDocGenerator<HibernateUnaEntidad>",
+            "request": "launch",
+            "mainClass": "com.mysql.jdbc.util.PropertiesDocGenerator",
+            "projectName": "HibernateUnaEntidad"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-CtClass<HibernateUnaEntidad>",
+            "request": "launch",
+            "mainClass": "javassist.CtClass",
+            "projectName": "HibernateUnaEntidad"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Loader<HibernateUnaEntidad>",
+            "request": "launch",
+            "mainClass": "javassist.Loader",
+            "projectName": "HibernateUnaEntidad"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Loader<HibernateUnaEntidad>(1)",
+            "request": "launch",
+            "mainClass": "javassist.tools.reflect.Loader",
+            "projectName": "HibernateUnaEntidad"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Webserver<HibernateUnaEntidad>",
+            "request": "launch",
+            "mainClass": "javassist.tools.web.Webserver",
+            "projectName": "HibernateUnaEntidad"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Version<HibernateUnaEntidad>",
+            "request": "launch",
+            "mainClass": "org.hibernate.Version",
+            "projectName": "HibernateUnaEntidad"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Version<HibernateUnaEntidad>(1)",
+            "request": "launch",
+            "mainClass": "org.hibernate.annotations.common.Version",
+            "projectName": "HibernateUnaEntidad"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-CustomVersionOneStrategy<HibernateUnaEntidad>",
+            "request": "launch",
+            "mainClass": "org.hibernate.id.uuid.CustomVersionOneStrategy",
+            "projectName": "HibernateUnaEntidad"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Helper<HibernateUnaEntidad>",
+            "request": "launch",
+            "mainClass": "org.hibernate.id.uuid.Helper",
+            "projectName": "HibernateUnaEntidad"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-ArrayHelper<HibernateUnaEntidad>",
+            "request": "launch",
+            "mainClass": "org.hibernate.internal.util.collections.ArrayHelper",
+            "projectName": "HibernateUnaEntidad"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-GenericSignatureParser<HibernateUnaEntidad>",
+            "request": "launch",
+            "mainClass": "org.jboss.jandex.GenericSignatureParser",
+            "projectName": "HibernateUnaEntidad"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Main<HibernateUnaEntidad>",
+            "request": "launch",
+            "mainClass": "org.jboss.jandex.Main",
+            "projectName": "HibernateUnaEntidad"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-TestActualizarCliente<HibernateUnaEntidad>",
+            "request": "launch",
+            "mainClass": "test.TestActualizarCliente",
+            "projectName": "HibernateUnaEntidad"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-TestAgregarCliente<HibernateUnaEntidad>",
+            "request": "launch",
+            "mainClass": "test.TestAgregarCliente",
+            "projectName": "HibernateUnaEntidad"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-TestEliminarCliente<HibernateUnaEntidad>",
+            "request": "launch",
+            "mainClass": "test.TestEliminarCliente",
+            "projectName": "HibernateUnaEntidad"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-TestHBM<HibernateUnaEntidad>",
+            "request": "launch",
+            "mainClass": "test.TestHBM",
+            "projectName": "HibernateUnaEntidad"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-TestTraerTodosClientes<HibernateUnaEntidad>",
+            "request": "launch",
+            "mainClass": "test.TestTraerTodosClientes",
+            "projectName": "HibernateUnaEntidad"
+        }
+    ]
+}
