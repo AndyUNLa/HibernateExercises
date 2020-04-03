@@ -11,8 +11,9 @@ PROJECT-FOLDER/
 
 ### Nos ubicamos dentro de la carpeta del proyecto y tipeamos lo siguiente:
 ```bash
-mvn archetype:generate -DgroupId=com.company -DartifactId=projectUnaEntidad -DarchetypeArtifactId=maven-archetype-quickstart -Dversion=1.0-SNAPSHOT
-cd projectUnaEntidad && mvn install
+declare NOMBRE_APP="Debes-elegir-un-nombre-para-la-app"
+mvn archetype:generate -DgroupId=com.company -DartifactId=$NOMBRE_APP -DarchetypeArtifactId=maven-archetype-quickstart -Dversion=1.0-SNAPSHOT
+cd $NOMBRE_APP && mvn install # Ingresamos a la carpeta de la nueva app creada y empezamos a instalar
 ```
 ### Agregamos las dependencias que se encuentran en el archivo pom.xml.bak(en el directorio raíz) al archivo pom.xml del actual directorio:
 ```bash
@@ -26,7 +27,7 @@ PROJECT-FOLDER/
 ├── .gitignore
 ├── .pom.xml.bak
 ├── README.md
-└── projectUnaEntidad
+└── $NOMBRE_APP
     ├── .classpath # Sirve para que nuestro editor encuentre las librerias y nuestro proyecto
     ├── .project
     ├── pom.xml
@@ -56,5 +57,5 @@ PROJECT-FOLDER/
         │   └── com
         │       └── company
         │           └── AppTest.class
-        └── projectUnaEntidad-1.0-SNAPSHOT.jar
+        └── $NOMBRE_APP-1.0-SNAPSHOT.jar
 ```
