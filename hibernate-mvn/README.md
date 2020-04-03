@@ -14,7 +14,7 @@ PROJECT-FOLDER/
 mvn archetype:generate -DgroupId=com.company -DartifactId=projectUnaEntidad -DarchetypeArtifactId=maven-archetype-quickstart -Dversion=1.0-SNAPSHOT
 cd projectUnaEntidad && mvn install
 ```
-### Agregamos las dependencias que necesita el proyecto. Se encuentra en el directorio raíz:
+### Agregamos las dependencias que se encuentran en el archivo pom.xml.bak(en el directorio raíz) al archivo pom.xml del actual directorio:
 ```bash
 mvn package         # 1ro colocamos las dependencias que necesita nuestro proyecto y luego ejecutamos el comando.
 mvn eclipse:eclipse # Para generar un archivo .classpath con el que nuestro editor de texto o IDE(Eclipse y VSCode) puede encontrar las dependencias descargadas
