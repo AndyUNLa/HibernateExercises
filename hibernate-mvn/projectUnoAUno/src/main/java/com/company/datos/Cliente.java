@@ -9,16 +9,18 @@ public class Cliente {
 	private int dni;
 	private LocalDate fechaDeNacimiento;
 	private boolean baja;
+	private Contacto contacto;
 	
 	public Cliente(){} //siempre hay que implementar el constructor vacio
 	// nunca va el id en el constructor por ser autoincrementable
-	public Cliente(String apellido, String nombre, int dni, LocalDate fechaDeNacimiento) {
+	public Cliente(String apellido, String nombre, int dni, LocalDate fechaDeNacimiento, Contacto contacto) {
 		super();
 		this.apellido = apellido;
 		this.nombre = nombre;
 		this.dni= dni;
 		this.fechaDeNacimiento = fechaDeNacimiento;
 		this.baja=false;
+		this.setContacto(contacto);
 	}
 	public long getIdCliente() {
 		return idCliente;
@@ -57,7 +59,13 @@ public class Cliente {
 	public void setBaja(boolean baja) {
 		this.baja = baja;
 	}
+	public Contacto getContacto() {
+		return contacto;
+	}
+	public void setContacto(Contacto contacto) {
+		this.contacto = contacto;
+	}
 	public String toString(){
-		return (idCliente+" "+apellido+" "+nombre+" DNI: "+dni+" F.de Nacimiento:"+ fechaDeNacimiento.getDayOfMonth()+"/"+fechaDeNacimiento.getMonthValue()+"/"+ fechaDeNacimiento.getYear()+""+baja);
+		return (idCliente + " " + apellido + " " + nombre + " DNI: " + dni + " F.de Nacimiento: " + Funciones.traeFechaCorta(fechaDeNacimiento) + " " + baja);
 	}
 }

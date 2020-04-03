@@ -10,5 +10,6 @@
     <property column="dni" name="dni" type="int"/>
     <property column="fechaDeNacimiento" name="fechaDeNacimiento" type="LocalDate"/>
     <property column="baja" name="baja" type="boolean"/>
-  </class>    
+    <one-to-one name="contacto" class="com.company.datos.Contacto"></one-to-one>
+  </class>
 </hibernate-mapping>
