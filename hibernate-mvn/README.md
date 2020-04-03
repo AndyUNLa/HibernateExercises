@@ -10,9 +10,9 @@ PROJECT-FOLDER/
 
 ### Nos ubicamos dentro de la carpeta del proyecto y tipeamos lo siguiente:
 ```bash
-mvn archetype:generate -DgroupId=com.company -DartifactId=testHibernateMvn -DarchetypeArtifactId=maven-archetype-quickstart -Dversion=1.0-SNAPSHOT
-cd testHibernateMvn && mvn install
-mvn package # To install dependencies suited in pom.xml file
+mvn archetype:generate -DgroupId=com.company -DartifactId=projectUnaEntidad -DarchetypeArtifactId=maven-archetype-quickstart -Dversion=1.0-SNAPSHOT
+cd projectUnaEntidad && mvn install
+mvn package         # 1ro colocamos las dependencias que necesita nuestro proyecto y luego ejecutamos el comando.
 mvn eclipse:eclipse # Para generar un archivo .classpath con el que nuestro editor de texto o IDE(Eclipse y VSCode) puede encontrar las dependencias descargadas
 ```
 
@@ -21,7 +21,7 @@ mvn eclipse:eclipse # Para generar un archivo .classpath con el que nuestro edit
 PROJECT-FOLDER/
 ├── .gitignore
 ├── README.md
-└── testHibernateMvn
+└── projectUnaEntidad
     ├── .classpath # Sirve para que nuestro editor encuentre las librerias y nuestro proyecto
     ├── .project
     ├── pom.xml
@@ -51,5 +51,5 @@ PROJECT-FOLDER/
         │   └── com
         │       └── company
         │           └── AppTest.class
-        └── testHibernateMvn-1.0-SNAPSHOT.jar
+        └── projectUnaEntidad-1.0-SNAPSHOT.jar
 ```
