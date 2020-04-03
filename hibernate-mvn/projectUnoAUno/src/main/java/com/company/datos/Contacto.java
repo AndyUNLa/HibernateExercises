@@ -55,4 +55,9 @@ public class Contacto {
     public void setCliente(Cliente cliente) {
         this.cliente = cliente;
     }
+
+    @Override
+    public String toString(){
+		return (idContacto + " " + email + " Movil: " + movil + " Fijo: " + fijo);
+	}
 }

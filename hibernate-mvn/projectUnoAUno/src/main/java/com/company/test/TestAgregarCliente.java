@@ -1,6 +1,5 @@
 package com.company.test;
 import java.time.LocalDate;
-import java.util.function.LongToIntFunction;
 
 import com.company.negocio.ClienteABM;
 
@@ -9,11 +8,10 @@ public class TestAgregarCliente {
 		String apellido = "Perez";
 		String nombre = "Juan";
 		int dni = 32000001;
-		// tu fecha de nacimiento
 		LocalDate fechaDeNacimiento = LocalDate.now();
 		ClienteABM abm = new ClienteABM();
 		try {
-			long ultimoIdCliente = abm.agregar(apellido, nombre, dni, fechaDeNacimiento);
+			long ultimoIdCliente = abm.agregar(apellido, nombre, dni, fechaDeNacimiento, null);
 			System.out.println("Agregado satisfactoriamente. ID: " + Long.toString(ultimoIdCliente));
 		} catch(Exception e) {
 			System.out.println(e.getMessage());
