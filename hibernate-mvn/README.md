@@ -13,7 +13,7 @@ PROJECT-FOLDER/
 mvn archetype:generate -DgroupId=com.company -DartifactId=testHibernateMvn -DarchetypeArtifactId=maven-archetype-quickstart -Dversion=1.0-SNAPSHOT
 cd testHibernateMvn && mvn install
 mvn package # To install dependencies suited in pom.xml file
-mvn eclipse:eclipse # Para generar un archivo .classpath con elque nuestro editor o IDE(Eclipse y VSCode) puede encontrar las dependencias descargadas
+mvn eclipse:eclipse # Para generar un archivo .classpath con el que nuestro editor de texto o IDE(Eclipse y VSCode) puede encontrar las dependencias descargadas
 ```
 
 ## ___Tras esto el árbol de directorios quedará de la sig. manera___
