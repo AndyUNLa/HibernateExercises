@@ -11,9 +11,7 @@ import java.util.Random;
 
 public class Funciones {
 
-	//  METODO QUE EXPRESA FECHA EN FORMATO NUESTRO CADA DIA EN LETRAS  ///////////////////
-	
-	
+	//  METODO QUE EXPRESA FECHA EN FORMATO NUESTRO CADA DIA EN LETRAS
 	public static LocalDate traerFecha(String fecha) {
 		//Parámetro de la forma "AAAA-MM-DD"
 		int aaaa,mm,dd;
