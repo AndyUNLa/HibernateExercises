@@ -16,7 +16,7 @@ mvn package # To install dependencies suited in pom.xml file
 mvn eclipse:eclipse # Para generar un archivo .classpath con el que nuestro editor de texto o IDE(Eclipse y VSCode) puede encontrar las dependencias descargadas
 ```
 
-## ___Tras esto el árbol de directorios quedará de la sig. manera___
+### ___Tras esto el árbol de directorios quedará de la sig. manera___
 ```bash
 PROJECT-FOLDER/
 ├── .gitignore
