@@ -5,6 +5,7 @@ Al principio tendremos una carpeta con algunos archivos de texto o ninguno
 ```bash
 PROJECT-FOLDER/
 ├── .gitignore
+├── .pom.xml.bak    # Archivo que contiene las dependencias restantes
 └── README.md
 ```
 
@@ -12,6 +13,9 @@ PROJECT-FOLDER/
 ```bash
 mvn archetype:generate -DgroupId=com.company -DartifactId=projectUnaEntidad -DarchetypeArtifactId=maven-archetype-quickstart -Dversion=1.0-SNAPSHOT
 cd projectUnaEntidad && mvn install
+```
+### Agregamos las dependencias que necesita el proyecto. Se encuentra en el directorio raíz:
+```bash
 mvn package         # 1ro colocamos las dependencias que necesita nuestro proyecto y luego ejecutamos el comando.
 mvn eclipse:eclipse # Para generar un archivo .classpath con el que nuestro editor de texto o IDE(Eclipse y VSCode) puede encontrar las dependencias descargadas
 ```
@@ -20,6 +24,7 @@ mvn eclipse:eclipse # Para generar un archivo .classpath con el que nuestro edit
 ```bash
 PROJECT-FOLDER/
 ├── .gitignore
+├── .pom.xml.bak
 ├── README.md
 └── projectUnaEntidad
     ├── .classpath # Sirve para que nuestro editor encuentre las librerias y nuestro proyecto
