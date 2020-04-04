@@ -1,5 +1,4 @@
 package com.company.negocio;
-import java.time.LocalDate;
 import com.company.dao.ContactoDao;
 import com.company.datos.Contacto;
 import com.company.datos.Cliente;

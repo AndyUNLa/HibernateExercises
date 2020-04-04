@@ -7,7 +7,7 @@ public class Contacto {
     private String fijo;
     private Cliente cliente;
 
-    private Contacto(){}
+    public Contacto(){}
 
     public Contacto(String email, String movil, String fijo, Cliente cliente) {
         this.email = email;
