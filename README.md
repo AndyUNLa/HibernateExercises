@@ -10,10 +10,11 @@ o si no con ___Eclipse___
 eclipse hibernate-uno-a-uno
 ```
 
-## En el caso del proyecto en ___Maven___:
+## En el caso del proyecto en ___Maven___(_hibernate-mvn_):
 ```bash
 declare NOMBRE_PROYECTO="projectUnaEntidad"
 cd hibernate-mvn    # Contiene todos los proyectos en cada subcarpeta
 cd $NOMBRE_PROYECTO # Debes cambiarlo por el directorio correspondiente
 eclipse . # o `code .`
 ```
+## NOTA: Dentro del proyecto en Maven hay una instrucción de cómo realizar un proyecto Maven desde cero
