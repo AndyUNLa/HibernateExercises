@@ -1,7 +1,7 @@
 # Hibernate with Maven
 
 ## Para crear un proyecto Maven desde 0:
-Al principio tendremos una carpeta con algunos archivos de texto o ninguno
+Al principio tendremos una carpeta con algunos archivos de texto
 ```bash
 PROJECT-FOLDER/
 ├── .gitignore
@@ -9,9 +9,10 @@ PROJECT-FOLDER/
 └── README.md
 ```
 
+### PASOS PARA CREAR UN PROYECTO MAVEN DESDE CERO
 ### Nos ubicamos dentro de la carpeta del proyecto y tipeamos lo siguiente:
 ```bash
-declare NOMBRE_APP="Debes-elegir-un-nombre-para-la-app"
+declare NOMBRE_APP="nombre-app"
 mvn archetype:generate -DgroupId=com.company -DartifactId=$NOMBRE_APP -DarchetypeArtifactId=maven-archetype-quickstart -Dversion=1.0-SNAPSHOT
 cd $NOMBRE_APP && mvn install # Ingresamos a la carpeta de la nueva app creada y empezamos a instalar
 ```
