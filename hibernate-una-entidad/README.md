@@ -1,1 +1,1 @@
-# HibernateUnaEntidad
+# hibernate-una-entidad
