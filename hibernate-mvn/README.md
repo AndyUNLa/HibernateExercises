@@ -9,7 +9,6 @@ PROJECT-FOLDER/
 └── README.md
 ```
 
-### PASOS PARA CREAR UN PROYECTO MAVEN DESDE CERO
 ### Nos ubicamos dentro de la carpeta del proyecto y tipeamos lo siguiente:
 ```bash
 declare NOMBRE_APP="nombre-app"
