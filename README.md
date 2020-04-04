@@ -1,6 +1,6 @@
 # HibernateExercises
 
-## Los archivos de creación de las bases de datos se encuentran en el directrio _sql_
+### :gear: Los archivos para crear las bases de datos se encuentran en el directrio _sql_
 
 ## Cada directorio contiene un tipo de ejercicio:
 Ej: Abrir el ejercicio __hibernate-uno-a-uno__ con ___VSCode___
@@ -20,4 +20,5 @@ cd $NOMBRE_PROYECTO # Debes cambiarlo por el directorio correspondiente
 eclipse . # o `code .`
 ```
 <br>
+
 ## _NOTA: Dentro del proyecto en Maven hay una instrucción de cómo realizar un proyecto Maven desde cero_
