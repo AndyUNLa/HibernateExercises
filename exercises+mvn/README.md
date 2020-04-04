@@ -3,7 +3,7 @@
 ## Para crear un proyecto Maven desde 0:
 Al principio tendremos una carpeta con algunos archivos de texto
 ```bash
-PROJECT-FOLDER/
+THIS-PROJECT-FOLDER/ # El directorio actual donde se encuentra este archivo
 ├── .gitignore
 ├── .pom.xml.bak    # Archivo que contiene las dependencias restantes
 └── README.md
@@ -23,7 +23,7 @@ mvn eclipse:eclipse # Para generar un archivo .classpath con el que nuestro edit
 
 ### ___Tras esto el árbol de directorios quedará de la sig. manera___
 ```bash
-PROJECT-FOLDER/
+THIS-PROJECT-FOLDER/
 ├── .gitignore
 ├── .pom.xml.bak
 ├── README.md
