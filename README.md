@@ -17,4 +17,4 @@ cd hibernate-mvn    # Contiene todos los proyectos en cada subcarpeta
 cd $NOMBRE_PROYECTO # Debes cambiarlo por el directorio correspondiente
 eclipse . # o `code .`
 ```
-## NOTA: Dentro del proyecto en Maven hay una instrucción de cómo realizar un proyecto Maven desde cero
+## _NOTA: Dentro del proyecto en Maven hay una instrucción de cómo realizar un proyecto Maven desde cero_
