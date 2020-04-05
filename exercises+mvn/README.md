@@ -5,7 +5,7 @@ Al principio tendremos una carpeta con algunos archivos de texto
 ```bash
 THIS-PROJECT-FOLDER/ # El directorio actual donde se encuentra este archivo
 ├── .gitignore
-├── .pom.xml.bak    # Archivo que contiene las dependencias restantes
+├── pom.xml.bak    # Archivo que contiene las dependencias restantes
 └── README.md
 ```
 
