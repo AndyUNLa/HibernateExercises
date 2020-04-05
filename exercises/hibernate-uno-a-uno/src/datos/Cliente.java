@@ -66,6 +66,6 @@ public class Cliente {
 		this.contacto = contacto;
 	}
 	public String toString(){
-		return (idCliente + " " + apellido + " " + nombre + " DNI: " + dni + " F.de Nacimiento: " + Funciones.traeFechaCorta(fechaDeNacimiento) + " " + baja);
+		return ("ID-Cliente: " + idCliente + " " + apellido + " " + nombre + " DNI: " + dni + " F.de Nacimiento: " + Funciones.traeFechaCorta(fechaDeNacimiento) + " " + baja + "\n" + contacto);
 	}
 }

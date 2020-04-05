@@ -9,7 +9,7 @@ public class TestTraerClienteYContacto {
         long idCliente = 1;
         try {
             Cliente cliente = abm.traerClienteYContacto(idCliente);
-            System.out.println("\nTraer Cliente y contacto:\n" + cliente + "\n" + cliente.getContacto());
+            System.out.println("\nTraer Cliente y contacto:\n" + cliente);
         } catch(Exception e) {
             System.out.println(e.getMessage());
         }
