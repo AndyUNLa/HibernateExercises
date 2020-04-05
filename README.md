@@ -14,7 +14,7 @@ cd exercises
 eclipse hibernate-uno-a-uno
 ```
 
-## En el caso del proyecto en ___Maven___(_hibernate-mvn_):
+## En el caso del proyecto en ___Maven___(_exercises+mvn_):
 ```bash
 declare NOMBRE_PROYECTO="projectUnaEntidad"
 cd exercises+mvn    # Contiene todos los proyectos en cada subcarpeta
