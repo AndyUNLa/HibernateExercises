@@ -16,7 +16,7 @@ eclipse hibernate-uno-a-uno
 
 ## En el caso del proyecto en ___Maven___(_exercises+mvn_):
 ```bash
-declare NOMBRE_PROYECTO="projectUnaEntidad"
+declare NOMBRE_PROYECTO="hibernate-uno-a-uno"
 cd exercises+mvn    # Contiene todos los proyectos en cada subcarpeta
 eclipse $NOMBRE_PROYECTO # Cambiar por el directorio correspondiente
 # O en el caso de VSCode
