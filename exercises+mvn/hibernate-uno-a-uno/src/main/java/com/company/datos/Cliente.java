@@ -65,7 +65,8 @@ public class Cliente {
 	public void setContacto(Contacto contacto) {
 		this.contacto = contacto;
 	}
+	@Override
 	public String toString(){
-		return (idCliente + " " + apellido + " " + nombre + " DNI: " + dni + " F.de Nacimiento: " + Funciones.traeFechaCorta(fechaDeNacimiento) + " " + baja);
+		return ("ID-Cliente: " + idCliente + " " + apellido + " " + nombre + " DNI: " + dni + " F.de Nacimiento: " + Funciones.traeFechaCorta(fechaDeNacimiento) + " " + baja + "\n" + contacto);
 	}
 }

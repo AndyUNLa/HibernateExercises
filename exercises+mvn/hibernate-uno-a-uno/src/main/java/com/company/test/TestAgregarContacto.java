@@ -13,19 +13,20 @@ import com.company.negocio.ContactoABM;
 public class TestAgregarContacto {
 	public static void main(String[] args) {
 		ClienteABM abmCliente = new ClienteABM();
+		ContactoABM abmContacto = new ContactoABM();
 		long idCliente = 4;
 		Cliente cliente = abmCliente.traer(idCliente);
-		if (cliente == null) {
-			System.out.println("No existe el cliente con ese ID");
-		} else {
-			System.out.println(cliente);
-			ContactoABM abmContacto = new ContactoABM();
-			try {
+		System.out.println(cliente);
+		try {
+			if (cliente == null) {
+				System.out.println("No existe el cliente con ese ID");
+			} else {
 				abmContacto.agregar("alguien@example.com", "11-11111234", "011-11111234", cliente);
 				System.out.println("Contacto agregado satisfactoriamente");
-			} catch(Exception e) {
-				System.out.println(e.getMessage());
 			}
+		} catch(Exception e) {
+			System.out.println(e.getMessage());
 		}
 	}
 }
+

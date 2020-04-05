@@ -58,6 +58,6 @@ public class Contacto {
 
     @Override
     public String toString(){
-		return (idContacto + " " + email + " Movil: " + movil + " Fijo: " + fijo);
+		return ("ID-Contacto: " + idContacto + " " + email + " Movil: " + movil + " Fijo: " + fijo);
 	}
 }
