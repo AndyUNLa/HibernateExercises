@@ -1,0 +1,17 @@
+/home/andy/Documents/Universidad/OO2/TP-OO2/hibernate-mvn/hibernate-uno-a-uno/src/main/java/com/company/App.java
+/home/andy/Documents/Universidad/OO2/TP-OO2/hibernate-mvn/hibernate-uno-a-uno/src/main/java/com/company/datos/Cliente.java
+/home/andy/Documents/Universidad/OO2/TP-OO2/hibernate-mvn/hibernate-uno-a-uno/src/main/java/com/company/test/TestEliminarCliente.java
+/home/andy/Documents/Universidad/OO2/TP-OO2/hibernate-mvn/hibernate-uno-a-uno/src/main/java/com/company/datos/Contacto.java
+/home/andy/Documents/Universidad/OO2/TP-OO2/hibernate-mvn/hibernate-uno-a-uno/src/main/java/com/company/test/TestActualizarCliente.java
+/home/andy/Documents/Universidad/OO2/TP-OO2/hibernate-mvn/hibernate-uno-a-uno/src/main/java/com/company/test/TestTraerClientes.java
+/home/andy/Documents/Universidad/OO2/TP-OO2/hibernate-mvn/hibernate-uno-a-uno/src/main/java/com/company/negocio/ClienteABM.java
+/home/andy/Documents/Universidad/OO2/TP-OO2/hibernate-mvn/hibernate-uno-a-uno/src/main/java/com/company/test/TestAgregarContactoNuevo.java
+/home/andy/Documents/Universidad/OO2/TP-OO2/hibernate-mvn/hibernate-uno-a-uno/src/main/java/com/company/test/TestAgregarCliente.java
+/home/andy/Documents/Universidad/OO2/TP-OO2/hibernate-mvn/hibernate-uno-a-uno/src/main/java/com/company/test/TestTraerClienteYContacto.java
+/home/andy/Documents/Universidad/OO2/TP-OO2/hibernate-mvn/hibernate-uno-a-uno/src/main/java/com/company/test/TestAgregarContacto.java
+/home/andy/Documents/Universidad/OO2/TP-OO2/hibernate-mvn/hibernate-uno-a-uno/src/main/java/com/company/dao/HibernateUtil.java
+/home/andy/Documents/Universidad/OO2/TP-OO2/hibernate-mvn/hibernate-uno-a-uno/src/main/java/com/company/dao/ContactoDao.java
+/home/andy/Documents/Universidad/OO2/TP-OO2/hibernate-mvn/hibernate-uno-a-uno/src/main/java/com/company/funciones/Funciones.java
+/home/andy/Documents/Universidad/OO2/TP-OO2/hibernate-mvn/hibernate-uno-a-uno/src/main/java/com/company/negocio/ContactoABM.java
+/home/andy/Documents/Universidad/OO2/TP-OO2/hibernate-mvn/hibernate-uno-a-uno/src/main/java/com/company/dao/ClienteDao.java
+/home/andy/Documents/Universidad/OO2/TP-OO2/hibernate-mvn/hibernate-uno-a-uno/src/main/java/com/company/test/TestHBM.java
