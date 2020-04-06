@@ -23,8 +23,7 @@ mvn eclipse:eclipse # Para generar un archivo .classpath con el que nuestro edit
 ### ___Tras esto el árbol de directorios quedará de la sig. manera___
 ```bash
 THIS-PROJECT-FOLDER/
-├── .gitignore
-├── .pom.xml.bak
+├── pom.xml.bak
 ├── README.md
 └── $NOMBRE_APP
     ├── .classpath # Sirve para que nuestro editor encuentre las librerias y nuestro proyecto
