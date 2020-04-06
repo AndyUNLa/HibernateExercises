@@ -20,7 +20,7 @@ public class Contacto {
         return idContacto;
     }
 
-    public void setIdContacto(long idContacto) {
+    protected void setIdContacto(long idContacto) {
         this.idContacto = idContacto;
     }
 
