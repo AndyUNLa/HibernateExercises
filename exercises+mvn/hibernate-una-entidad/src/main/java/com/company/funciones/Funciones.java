@@ -658,8 +658,8 @@ public class Funciones {
 
 	public static boolean enVigencia(GregorianCalendar fecha){
 		boolean vigente=false;
-		GregorianCalendar fechaIni =new GregorianCalendar(2016,8,6); 
-		GregorianCalendar fechaFin =new GregorianCalendar(2016,9,12); 
+		GregorianCalendar fechaIni = new GregorianCalendar(2016,8,6); 
+		GregorianCalendar fechaFin = new GregorianCalendar(2016,9,12); 
 		if(fecha.after(fechaIni)&&fecha.before(fechaFin)){
 			vigente=true;
 		}
@@ -682,7 +682,7 @@ public class Funciones {
 
 	public static boolean esAnterior(GregorianCalendar fecha1) throws Exception{
 		boolean anterior = false;
-		GregorianCalendar fecha =new GregorianCalendar(); 
+		GregorianCalendar fecha = new GregorianCalendar(); 
 		if(fecha1.before(fecha)){
 			anterior=true;
 		}else{
