@@ -4,7 +4,7 @@ USE `bd-hibernate-uno-a-muchos`;
 --
 -- Host: 127.0.0.1    Database: bd-hibernate-uno-a-muchos
 -- ------------------------------------------------------
--- Server version	5.5.31
+-- Server version 5.5.31
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -54,7 +54,7 @@ DROP TABLE IF EXISTS `prestamo`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `prestamo` (
   `idPrestamo` int(11) NOT NULL AUTO_INCREMENT,
-  `fecha` datetime NOT NULL,
+  `fecha` date NOT NULL,
   `monto` double NOT NULL,
   `interes` double NOT NULL,
   `cantCuotas` int(11) NOT NULL,
