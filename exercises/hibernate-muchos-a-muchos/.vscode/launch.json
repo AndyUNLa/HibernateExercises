@@ -1,0 +1,258 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - TestEliminarClienteDeEvento",
+            "request": "launch",
+            "mainClass": "test.TestEliminarClienteDeEvento",
+            "projectName": "hibernate-muchos-a-muchos"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - TestEliminarEventoDeCliente",
+            "request": "launch",
+            "mainClass": "test.TestEliminarEventoDeCliente",
+            "projectName": "hibernate-muchos-a-muchos"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - TestAgregarClienteAEvento",
+            "request": "launch",
+            "mainClass": "test.TestAgregarClienteAEvento",
+            "projectName": "hibernate-muchos-a-muchos"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - TestTraerClienteEventos",
+            "request": "launch",
+            "mainClass": "test.TestTraerClienteEventos",
+            "projectName": "hibernate-muchos-a-muchos"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - TestAgregarEventoACliente",
+            "request": "launch",
+            "mainClass": "test.TestAgregarEventoACliente",
+            "projectName": "hibernate-muchos-a-muchos"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - TestTraerEventos",
+            "request": "launch",
+            "mainClass": "test.TestTraerEventos",
+            "projectName": "hibernate-muchos-a-muchos"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - TestTraerClienteYPrestamos",
+            "request": "launch",
+            "mainClass": "test.TestTraerClienteYPrestamos",
+            "projectName": "hibernate-muchos-a-muchos"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - TestTraerPrestamo",
+            "request": "launch",
+            "mainClass": "test.TestTraerPrestamo",
+            "projectName": "hibernate-muchos-a-muchos"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - TestHBM",
+            "request": "launch",
+            "mainClass": "test.TestHBM",
+            "projectName": "HibernateUnaEntidad"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - TestHBM",
+            "request": "launch",
+            "mainClass": "test.TestHBM",
+            "projectName": "hibernate-muchos-a-muchos"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - TestHBM",
+            "request": "launch",
+            "mainClass": "test.TestHBM",
+            "projectName": "hibernate-muchos-a-muchos"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - TestTraerClientes",
+            "request": "launch",
+            "mainClass": "test.TestTraerClientes",
+            "projectName": "hibernate-muchos-a-muchos"
+        },
+        {
+            "name": "Java",
+            "type": "java",
+            "request": "launch",
+            "stopOnEntry": true,
+            "jdkPath": "${env:JAVA_HOME}/bin",
+            "cwd": "${fileDirname}",
+            "startupClass": "${fileBasenameNoExtension}",
+            "classpath": [
+                ".",
+                "${fileDirname}"
+            ]
+        },
+        {
+            "name": "Java Console App",
+            "type": "java",
+            "request": "launch",
+            "stopOnEntry": true,
+            "jdkPath": "${env:JAVA_HOME}/bin",
+            "cwd": "${fileDirname}",
+            "startupClass": "${fileBasenameNoExtension}",
+            "classpath": [
+                ".",
+                "${fileDirname}"
+            ],
+            "externalConsole": true
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch) - Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-ASTFrame<hibernate-muchos-a-muchos>",
+            "request": "launch",
+            "mainClass": "antlr.debug.misc.ASTFrame",
+            "projectName": "hibernate-muchos-a-muchos"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Tool<hibernate-muchos-a-muchos>",
+            "request": "launch",
+            "mainClass": "antlr.preprocessor.Tool",
+            "projectName": "hibernate-muchos-a-muchos"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-PropertiesDocGenerator<hibernate-muchos-a-muchos>",
+            "request": "launch",
+            "mainClass": "com.mysql.jdbc.util.PropertiesDocGenerator",
+            "projectName": "hibernate-muchos-a-muchos"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-CtClass<hibernate-muchos-a-muchos>",
+            "request": "launch",
+            "mainClass": "javassist.CtClass",
+            "projectName": "hibernate-muchos-a-muchos"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Loader<hibernate-muchos-a-muchos>",
+            "request": "launch",
+            "mainClass": "javassist.Loader",
+            "projectName": "hibernate-muchos-a-muchos"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Loader<hibernate-muchos-a-muchos>(1)",
+            "request": "launch",
+            "mainClass": "javassist.tools.reflect.Loader",
+            "projectName": "hibernate-muchos-a-muchos"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Webserver<hibernate-muchos-a-muchos>",
+            "request": "launch",
+            "mainClass": "javassist.tools.web.Webserver",
+            "projectName": "hibernate-muchos-a-muchos"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Version<hibernate-muchos-a-muchos>",
+            "request": "launch",
+            "mainClass": "org.hibernate.Version",
+            "projectName": "hibernate-muchos-a-muchos"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Version<hibernate-muchos-a-muchos>(1)",
+            "request": "launch",
+            "mainClass": "org.hibernate.annotations.common.Version",
+            "projectName": "hibernate-muchos-a-muchos"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-CustomVersionOneStrategy<hibernate-muchos-a-muchos>",
+            "request": "launch",
+            "mainClass": "org.hibernate.id.uuid.CustomVersionOneStrategy",
+            "projectName": "hibernate-muchos-a-muchos"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Helper<hibernate-muchos-a-muchos>",
+            "request": "launch",
+            "mainClass": "org.hibernate.id.uuid.Helper",
+            "projectName": "hibernate-muchos-a-muchos"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-ArrayHelper<hibernate-muchos-a-muchos>",
+            "request": "launch",
+            "mainClass": "org.hibernate.internal.util.collections.ArrayHelper",
+            "projectName": "hibernate-muchos-a-muchos"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-GenericSignatureParser<hibernate-muchos-a-muchos>",
+            "request": "launch",
+            "mainClass": "org.jboss.jandex.GenericSignatureParser",
+            "projectName": "hibernate-muchos-a-muchos"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Main<hibernate-muchos-a-muchos>",
+            "request": "launch",
+            "mainClass": "org.jboss.jandex.Main",
+            "projectName": "hibernate-muchos-a-muchos"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-TestActualizarCliente<hibernate-muchos-a-muchos>",
+            "request": "launch",
+            "mainClass": "test.TestActualizarCliente",
+            "projectName": "hibernate-muchos-a-muchos"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-TestAgregarCliente<hibernate-muchos-a-muchos>",
+            "request": "launch",
+            "mainClass": "test.TestAgregarCliente",
+            "projectName": "hibernate-muchos-a-muchos"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-TestEliminarCliente<hibernate-muchos-a-muchos>",
+            "request": "launch",
+            "mainClass": "test.TestEliminarCliente",
+            "projectName": "hibernate-muchos-a-muchos"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-TestHBM<hibernate-muchos-a-muchos>",
+            "request": "launch",
+            "mainClass": "test.TestHBM",
+            "projectName": "hibernate-muchos-a-muchos"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-TestTraerTodosClientes<hibernate-muchos-a-muchos>",
+            "request": "launch",
+            "mainClass": "test.TestTraerTodosClientes",
+            "projectName": "hibernate-muchos-a-muchos"
+        }
+    ]
+}
