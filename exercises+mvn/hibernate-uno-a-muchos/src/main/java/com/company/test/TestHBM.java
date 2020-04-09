@@ -1,4 +1,5 @@
 package com.company.test;
+
 import org.hibernate.Session;
 import com.company.dao.HibernateUtil;
 
