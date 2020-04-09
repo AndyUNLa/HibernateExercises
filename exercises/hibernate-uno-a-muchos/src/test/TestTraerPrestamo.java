@@ -1,13 +1,19 @@
 package test;
 import java.util.List;
-import java.util.ArrayList;
 import datos.Cliente;
 import datos.Prestamo;
+import funciones.LoggerWrapper;
 import negocio.ClienteABM;
 import negocio.PrestamoABM;
 
+/*
+ * Test que trae un prestamo dado su ID y los 
+ * prestamos que tiene un cliente
+ */
 public class TestTraerPrestamo {
     public static void main(String[] args) {
+        String className = TestTraerClientes.class.getName();
+        LoggerWrapper logger = LoggerWrapper.getInstance(className, true);
         ClienteABM clienteABM = new ClienteABM();
         PrestamoABM prestamoABM = new PrestamoABM();
         long idPrestamo = 1;
@@ -20,13 +26,13 @@ public class TestTraerPrestamo {
         }
         int dni = 14000000;
         Cliente c = clienteABM.traer(dni);
-        System.out.println("\n---> TraerPrestamos del Cliente=" + c + "\n\n");
+        logger.info("Traer Prestamos del Cliente=" + c + "\n\n");
         try {
             List<Prestamo> prestamos = prestamoABM.traerPrestamo(c);
             for (Prestamo o : prestamos)
                 System.out.println(o + "\nPertenece a " + o.getCliente());
         } catch(Exception e) {
-            System.out.println(e.getMessage());
+            logger.error(e.getMessage());
         }
     }
 }
