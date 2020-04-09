@@ -9,7 +9,7 @@ import com.company.negocio.ClienteABM;
  */
 public class TestTraerClientes {
     public static void main(String[] args) {
-        String className = TestAgregarEventoACliente.class.getName();
+        String className = TestTraerClientes.class.getName();
         LoggerWrapper logger = LoggerWrapper.getInstance(className, true);
         ClienteABM abm = new ClienteABM();
         List<Cliente> list = abm.traer();

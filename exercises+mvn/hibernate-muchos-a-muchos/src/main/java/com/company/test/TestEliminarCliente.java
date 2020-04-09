@@ -8,7 +8,7 @@ import com.company.negocio.ClienteABM;
  */
 public class TestEliminarCliente {
 	public static void main(String[] args) {
-		String className = TestAgregarEventoACliente.class.getName();
+		String className = TestEliminarCliente.class.getName();
         LoggerWrapper logger = LoggerWrapper.getInstance(className, true);
 		ClienteABM abm = new ClienteABM();
 		long id = 1;
@@ -20,5 +20,4 @@ public class TestEliminarCliente {
 			logger.error(e.getMessage());
 		}
 	}
-
 }

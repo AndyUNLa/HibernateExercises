@@ -10,7 +10,7 @@ import com.company.negocio.EventoABM;
  */
 public class TestTraerEventoYClientes {
     public static void main(String[] args) {
-        String className = TestAgregarEventoACliente.class.getName();
+        String className = TestTraerEventoYClientes.class.getName();
         LoggerWrapper logger = LoggerWrapper.getInstance(className, true); // El 2do parámetro es para que hibernate no muestre los logs
         EventoABM eventoABM = new EventoABM();
         long idEvento = 1;

@@ -8,7 +8,7 @@ import com.company.negocio.ClienteABM;
  */
 public class TestActualizarCliente {
 	public static void main(String[] args) {
-		String className = TestAgregarEventoACliente.class.getName();
+		String className = TestActualizarCliente.class.getName();
         LoggerWrapper logger = LoggerWrapper.getInstance(className, true);
 		ClienteABM abm = new ClienteABM();
 		long id = 1;

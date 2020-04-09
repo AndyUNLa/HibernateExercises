@@ -9,7 +9,7 @@ import com.company.funciones.LoggerWrapper;
  */
 public class TestAgregarCliente {
 	public static void main(String[] args) {
-		String className = TestAgregarEventoACliente.class.getName();
+		String className = TestAgregarCliente.class.getName();
         LoggerWrapper logger = LoggerWrapper.getInstance(className, true);
 		String apellido = "Downey Jr";
 		String nombre = "Robert";
