@@ -4,7 +4,7 @@
 
 <br>
 
-## El directorio _exercices_ contiene cada uno de los ejercicios resueltos:
+## El directorio _exercises_ contiene cada uno de los ejercicios resueltos:
 Ej: Abrir el ejercicio __hibernate-uno-a-uno__ con ___VSCode___
 ```bash
 cd exercises
