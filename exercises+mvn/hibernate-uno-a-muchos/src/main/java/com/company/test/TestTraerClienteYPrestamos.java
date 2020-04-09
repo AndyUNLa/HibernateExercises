@@ -17,7 +17,7 @@ public class TestTraerClienteYPrestamos {
         long idCliente = 1;
         try {
             Cliente cliente = abm.traerClienteYPrestamos(idCliente);
-            logger.info("\nTraer Cliente y prestamos:\n" + idCliente);
+            logger.info("\nTraer prestamos del cliente: " + idCliente);
             logger.info("\n" + cliente);
             for (Prestamo p : cliente.getPrestamos())
                 System.out.println("\n" + p);
