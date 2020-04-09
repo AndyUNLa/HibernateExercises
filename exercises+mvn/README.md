@@ -1,4 +1,7 @@
 # Hibernate with Maven
+Este directorio contiene los mismo ejercicios que el otro directorio ubicado en la raíz del proyecto con la diferencia que las librerias las descargo y mantengo con Maven.
+
+<br>
 
 ## Para crear un proyecto Maven desde 0:
 Al principio tendremos una carpeta con algunos archivos de texto
