@@ -1,26 +1,23 @@
 package test;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
 import java.util.Set;
 import datos.Cliente;
 import datos.Evento;
-import negocio.ClienteABM;
+import funciones.LoggerWrapper;
 import negocio.EventoABM;
 /*
  * Test que trae un evento específico y sus clientes
  */
 public class TestTraerEventoYClientes {
     public static void main(String[] args) {
-        Logger.getLogger("org.hibernate").setLevel(Level.OFF); // Para no mostrar los logs de Hibernate
-        ClienteABM clienteABM = new ClienteABM();
+        String className = TestTraerEventoYClientes.class.getName();
+        LoggerWrapper logger = LoggerWrapper.getInstance(className, true); // El 2do parámetro es para que hibernate no muestre los logs
         EventoABM eventoABM = new EventoABM();
         long idEvento = 1;
-        System.out.println("\n---> Traer clientes del Evento idEvento=" + idEvento + "\n\n");
+        logger.info("Traer clientes del Evento idEvento=" + idEvento + "\n\n");
         try {
             Evento evento = eventoABM.traerEvento(idEvento);
-            System.out.println("Evento: " + evento);
+            logger.info("Evento: " + evento);
             int cont = 1;
             Set<Cliente> clientes = evento.getClientes();
             for (Cliente c : clientes) {
@@ -28,7 +25,7 @@ public class TestTraerEventoYClientes {
                 cont++;
             }
         } catch(Exception e) {
-            System.out.println(e.getMessage());
+            logger.error(e.getMessage());
         }
     }
 }

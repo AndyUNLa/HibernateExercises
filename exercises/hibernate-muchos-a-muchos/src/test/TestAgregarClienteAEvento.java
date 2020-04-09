@@ -28,7 +28,7 @@ public class TestAgregarClienteAEvento {
                 logger.warning("No se pudo agregar el cliente al evento");
             }
         } catch(Exception e) {
-            System.out.println(e.getMessage());
+            logger.error(e.getMessage());
         }
     }
 }
