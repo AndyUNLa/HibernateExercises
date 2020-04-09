@@ -10,8 +10,12 @@ import java.util.GregorianCalendar;
 import java.util.Random;
 
 public class Funciones {
-
-	//  METODO QUE EXPRESA FECHA EN FORMATO NUESTRO CADA DIA EN LETRAS
+	/**
+   	* Método que retorna una fecha de tipo LocalDate
+   	* dado un String 
+   	* @param fecha Tiene que ser del tipo "AAAA-MM-DD"
+   	* @return LocalDate
+   	*/
 	public static LocalDate traerFecha(String fecha) {
 		//Parámetro de la forma "AAAA-MM-DD"
 		int aaaa,mm,dd;
@@ -25,135 +29,45 @@ public class Funciones {
 		LocalDate fechaNueva = LocalDate.of(aaaa, mm, dd);
 		return fechaNueva;
 	}
-	/*
-	public static LocalDate traerFecha(String fecha) {
-		//Parámetro de la forma "AAAA-MM-DD"
-		int aaaa,mm,dd;
-		String anio="",mes="",dia="";
-		dia = fecha.substring(0, 2);//el ultimo no sale
-		mes = fecha.substring(3, 5);
-		anio = fecha.substring(6, 10);
-		aaaa = Integer.parseInt(anio);
-		mm = Integer.parseInt(mes);
- 		dd = Integer.parseInt(dia);
-		LocalDate fechaNueva = LocalDate.of(aaaa, mm, dd);
-		return fechaNueva;
-	}
-	*/
-	
 
+	/**
+   	* Método que retorna una fecha de tipo String 
+   	* @param fecha de tipo GregorianCalendar
+   	* @return String
+   	*/
 	public static String fechaForm(GregorianCalendar fecha){
-		int anyo=0; 	int mes=0;  	int dia=0;  	int diaSema=0;
-		String day ="";
+		int anyo = 0;
+		int mes = 0;
+		int dia = 0;
+		int indexDia = 0;
+		String[] days = {"Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"};
+		String day = "";
 		anyo = fecha.get(GregorianCalendar.YEAR);
 		mes = fecha.get(GregorianCalendar.MONTH)+1;
 		dia = fecha.get(GregorianCalendar.DAY_OF_MONTH);
-		diaSema = fecha.get(GregorianCalendar.DAY_OF_WEEK);
+		indexDia = fecha.get(GregorianCalendar.DAY_OF_WEEK) - 1; // Le restamos 1 porque comienza en 1
 
-		switch(diaSema) {
-		case 1:
-			day = "Domingo";
-			break;
-		case 2:
-			day = "Lunes";
-			break;
-		case 3:
-			day = "Martes";
-			break;
-		case 4:
-			day ="Miercoles";
-			break;
-		case 5:
-			day = "Jueves";
-			break;
-		case 6:
-			day = "Viernes";
-			break;   
-		case 7:
-			day ="Sabado";
-		}
-		return ("el "+ day + " - " + dia +"/" + mes + "/" + anyo);
+		day = days[indexDia];
+		return ("El " + day + " - " + dia +"/" + mes + "/" + anyo);
 	}
-	////////////////////////////////////////////////////////////////////////////
 
-	//  METODO PASAR LOS MESES A LETRAS   //////////////////////////////////
-
+	/**
+   	* Método Para obtener el nombre de un mes dado un GregorianCalendar 
+   	* @param fecha de tipo GregorianCalendar
+   	* @return String
+   	*/
 	public static String mesForm(GregorianCalendar fecha){
-		String month ="";
-		int diaMes = fecha.get(GregorianCalendar.MONTH);
-		switch(diaMes){
-		case 0:
-		{
-			month="Enero";
-			break;
-		}
-		case 1:
-		{
-			month="Febrero";
-			break;
-		}
-		case 2:
-		{
-			month="Marzo";
-			break;
-		}
-		case 3:
-		{
-			month="Abril";
-			break;
-		}
-		case 4:
-		{
-			month="Mayo";
-			break;
-		}
-		case 5:
-		{
-			month="Junio";
-			break;
-		}
-		case 6:
-		{
-			month="Julio";
-			break;
-		}
-		case 7:
-		{
-			month="Agosto";
-			break;
-		}
-		case 8:
-		{
-			month="Septiembre";
-			break;
-		}
-		case 9:
-		{
-			month="Octubre";
-			break;
-		}
-		case 10:
-		{
-			month="Noviembre";
-			break;
-		}
-		case 11:
-		{
-			month="Diciembre";
-			break;
-		}
-		default:
-		{
-			month="Error";
-			break;
-		}
-		}
-		return month;
+		String[] months = {"Enero", "Febrero", "Marzo", "Abril", "mayo", "Junio", "Julio", "Agosto", "Septiembre", "Noviembre", "Diciembre"};
+		int index = fecha.get(GregorianCalendar.MONTH);
+		return months[index];
 	}
-	///////////////////////////////////////////////////////////////////////////////////
-
-	//  METODO CALCULAR LAS EDADES   DEVUELVE  STRING  ////////////////////////////////////////////////////////////////
-
+	
+	/**
+   	* Método para  calcular el tiempo transcurrido entre 2 fechas 
+   	* @param fechaActual de tipo GregorianCalendar
+   	* @param fechaDeNacimiento de tipo GregorianCalendar
+   	* @return String
+   	*/
 	public static String calcularEdad (GregorianCalendar fechaActual, GregorianCalendar fechaDeNacimiento) {
 		int anios=0;  int meses=0;  int dias=0;
 
@@ -225,13 +139,10 @@ public class Funciones {
 				dias  = 0;		
 			}
 		}  				
-		return "    Tiene: " + anios + " a�os  " + meses + " meses  y  " + dias + " dias";      
+		return "Tiene: " + anios + " años, " + meses + " meses  y  " + dias + " dias";      
 
 	}
-	///////////////////////////////////////////////////////////////////////////////////////////////////////
-
-	// METODO CALCULAR LAS EDADES. DEVUELVE INT    ////////////////////////////////////////////////////
-
+	
 	public static int calculaEdad(GregorianCalendar fHoy, GregorianCalendar fechaNacimiento) {
 		int anios=0;	int meses=0;	int dias=0;
 
@@ -239,16 +150,15 @@ public class Funciones {
 		int mAct = fHoy.get(GregorianCalendar.MONTH)+1;
 		int dAct = fHoy.get(GregorianCalendar.DAY_OF_MONTH);
 		
-		// EN ESTA PARTE PODEMOS USAR EL getFechaNacimiento EN CASO DE PASAR UN SOLO PARAMETRO 
 		int yNac = fechaNacimiento.get(GregorianCalendar.YEAR);
 		int mNac = fechaNacimiento.get(GregorianCalendar.MONTH)+1;   // +1  		
 		int dNac = fechaNacimiento.get(GregorianCalendar.DAY_OF_MONTH);
 
 		GregorianCalendar fechaCumple= new GregorianCalendar(yA, mNac, dNac); 
 
-		anios =  fHoy.get(GregorianCalendar.YEAR) - fechaNacimiento.get(GregorianCalendar.YEAR);  // aca calculamos la edad como diferencia en a�os entre fechaNac y fechaActual
+		anios =  fHoy.get(GregorianCalendar.YEAR) - fechaNacimiento.get(GregorianCalendar.YEAR);
 
-		if (fechaCumple.before(fHoy)){   // ahora vemos las diferencias Si ya pas� el cumplea�os: La diferencia en a�os sigue igual?
+		if (fechaCumple.before(fHoy)){
 
 			dias = dAct - dNac;
 			meses = mAct - mNac;
@@ -269,9 +179,8 @@ public class Funciones {
 			}
 		} 
 		if(fechaCumple.after(fHoy)){
-			// Si todavia no lleg� el cumplea�os: La diferencia en a�os sigue igual?
 			anios --;		
-			dias = dAct - dNac;   // Y dias?
+			dias = dAct - dNac;
 			meses = 11 - mNac + mAct;
 
 			if (dias > 0 || dias == 0){
@@ -297,28 +206,14 @@ public class Funciones {
 					anios ++;
 				}	  
 			}  		 		
-			if (fechaCumple == fHoy){             // Como calculamos la diferencia sabiendo lo anterior? es el dia del cumplea�os!   Hay que hacer algo? 
+			if (fechaCumple == fHoy){
 
 				meses = 0;
 				dias  = 0;		
 			}
 		}  				
-		return anios ;      
-
+		return anios ;
 	}
-
-	//METODO DE IMPRESION DE LISTAS FUERA DEL MAIN
-	/*	public static void impresion(List<nombreClaseObjeto> lista){ 
-		for ( int p = 0; p < lista.size(); p++) {
-			System. out.println(lista.get(p));
-		}
-	}  */
-
-
-	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-	////////////////////////////////////   TRABAJO  PRATICO  DE  LA  GUIA  2   /////////////////////////////////////////////////////
-
-	// 1 - METODO esBisiesto //////////////////////////////////////////////////////////////////////
 
 	public static boolean esBisiesto(int anio){
 		if ((anio % 4 == 0) && (anio % 100 != 0) || (anio % 400 == 0)){
@@ -326,46 +221,32 @@ public class Funciones {
 		}
 		else {
 			return false;
-		} // end_else
-	} // end_public_esBiesto
-
-	// 2 - METODO traerAnio ///////////////////////////////////////////////////////////////////////
+		}
+	}
 
 	public static int traerAnio(GregorianCalendar f){
 		return f.get(Calendar.YEAR); 
 	}
 
-	// 3 - METODO traerMes ////////////////////////////////////////////////////////////////////////
-
 	public static int traerMes(GregorianCalendar f){
 		return f.get(Calendar.MONTH)+1;
 	}
-
-	// 4 - METODOtraerDia ////////////////////////////////////////////////////////////////////////
 
 	public static int traerDia(GregorianCalendar f){
 		return f.get(Calendar.DAY_OF_MONTH);
 	}
 
-	// 4.1 - METODO traerHora  ////////////////////////////////////////////////////////////////////
-
 	public static int traerHora(GregorianCalendar f){
 		return f.get(Calendar.HOUR);
 	}
-
-	// 4.2 - METODO traerMinuto  ////////////////////////////////////////////////////////////////////
 
 	public static int traerMinuto(GregorianCalendar f){
 		return f.get(Calendar.MINUTE);
 	}
 
-	// 4.3 - METODO traerSegundo  ////////////////////////////////////////////////////////////////////
-
 	public static int traerSegundo(GregorianCalendar f){
 		return f.get(Calendar.SECOND);
 	}	
-
-	// 5 - METODO esFechaValida ///////////////////////////////////////////////////////////////////
 
 	public static boolean esFechaValida(int anio, int mes, int dia){
 		boolean valida = false;	
@@ -384,16 +265,13 @@ public class Funciones {
 			} 
 		} 
 		return valida;
-	} // end_public_esFechaValida	
-
-	// 6 - METODO traerFecha RETURN GREGORIANCALENDAR  //////////////////////////////////////////////////////////////////////
+	}
 
 	public static GregorianCalendar traerFecha(int anio, int mes, int dia){
-		GregorianCalendar fecha = new GregorianCalendar(anio, (mes-1), dia);  //LE RESTO 1 AL MES PARA QUE JAVA LO TOME CORRECTAMENTE
+		GregorianCalendar fecha = new GregorianCalendar(anio, (mes-1), dia);
 		return fecha;
-	} // end_public_traerFecha
+	}
 
-	// 6.1 - METODO traeFecha RECIBE (DESDE STRING) GREGORIANCALENDAR DEVUELVE STRING   ///////////////////////////////////////
 	public static String traeFechaCorta(GregorianCalendar fecha){		
 		int anio=0, mes=0, dia=0;
 		anio = fecha.get(GregorianCalendar.YEAR);
@@ -402,34 +280,12 @@ public class Funciones {
 		return (dia +"/" + mes + "/" + anio);	
 	}
 
-	// 7 - METODO traerFecha RECIBE STRING RETURN GREGORIANCALENDAR ////////////////////////////////////////////////////////////////
-
-	/*
-	 * public static GregorianCalendar traerFecha(String fecha){ String[] j=
-	 * fecha.split("/");//con split indico donde se divide la cadena para formar una
-	 * array de cadenas //como la fecha en String tiene el formato --/--/-- tendre
-	 * un array de 3 posiciones //inicializo variables en formato int de dia mes y
-	 * anio int dia = 0; int mes = 0; int anio = 0; dia =
-	 * Integer.parseInt(j[0]);//la instruccion integer.parseint convierte un String
-	 * en entero // en dia convierto a entero el primer espacio de la fecha --/ y lo
-	 * asigno a la posicion 0 del array mes = Integer.parseInt(j[1]); // en mes
-	 * convierto a entero el primer espacio de la fecha /--/ y lo asigno a la
-	 * posicion 1 del array anio = Integer.parseInt(j[2]); // en anio convierto a
-	 * entero el primer espacio de la fecha /-- y lo asigno a la posicion 2 del
-	 * array GregorianCalendar f = new GregorianCalendar(anio, (mes)-1, dia);
-	 * //retorno f en formato gregorianCalendar return f; } // end_public
-	 */
-
-	///////// A GREGORIAN CALENDAR	 ////////////// TOMA LA FECHA DEL USUARIO Y LA ADAPTA A GREG-CALENDAR
 	public static GregorianCalendar aGregorianCalendar(int anio, int mes, int dia){
 		GregorianCalendar fecha = new GregorianCalendar(anio, (mes)-1, dia);
 		fecha.setLenient(false);
 		return fecha;
-	} // end_public_aGregorianCalendar
-	//////////////////////////////////////////////////////////////////////////////
-
-///// METODO aGregorianCalendar SOBRECARGADO /////////////////////////////////////////////////////
-    
+	}
+	
     public static GregorianCalendar aGregorianCalendar(int anio, int mes, int dia, int hora, int minutos, int segundos){
     	GregorianCalendar fecha = new GregorianCalendar(anio, (mes)-1, dia);
 		fecha.set(Calendar.HOUR_OF_DAY, hora);
@@ -437,20 +293,12 @@ public class Funciones {
 		fecha.set(Calendar.SECOND, segundos);
     	fecha.setLenient(false);
     	return fecha;
-    } // end_public_aGregorianCalendar	
-////////////////////////////////////////////////////////////////////////////////////////////
-    
-	// 8 - METODO fechaCorta RECIBE GREGPRIAN CALENDAR  DEVUELVE UN STRING TIPO dd/mm/yyyy   //////////////////////////////////////////
-
+	}
+	
 	public static String fechaCorta(GregorianCalendar fecha){
 		return (fecha.get(GregorianCalendar.DAY_OF_MONTH) +"/" + (fecha.get(GregorianCalendar.MONTH)+1) + 
 				"/" + fecha.get(GregorianCalendar.YEAR));
-	} // end_public_fechaCorta
-
-	
-	/************************************************************************/
-	
-	/** 8.1 METODO  traerFechaCorta  /**  TRAER FECHA CORTA CON LocalDate  **/   
+	}
 
 	public static String traerFechaCorta(LocalDateTime fecha){
 		int anio=0, mes=0, dia=0;
@@ -459,7 +307,6 @@ public class Funciones {
 		dia = fecha.getDayOfMonth();
 		return (dia +"/" + ((mes)) + "/" + anio);
 	}
-	/**  TRAER FECHA CORTA CON LocalDate  **/
 	
 	public static String traerFechaCorta(LocalDate fecha){
 		int anio=0, mes=0, dia=0;
@@ -485,7 +332,7 @@ public class Funciones {
 	}
 	
 	
-	public static LocalDate sumarMes(LocalDate  fecha) {	
+	public static LocalDate sumarMes(LocalDate fecha) {	
 		int mes,anio;
 		int dia=fecha.getDayOfMonth();
 		if(fecha.getMonthValue()==12) {
@@ -499,17 +346,10 @@ public class Funciones {
 		return f;
 	}
 
-	
-	/************************************************************************/
-
-	// 9 - METODO traerFechaCortaHora  //// DEVUELVE UN STRING TIPO dd/mm/yyyy hh:mm:ss  /////////////////////////////////////
-
 	public static String traerFechaCortaHora ( GregorianCalendar fecha ){		                          
 		return (fecha.get(GregorianCalendar.DAY_OF_MONTH) +"/" + (fecha.get(GregorianCalendar.MONTH)+1) + "/" + fecha.get(GregorianCalendar.YEAR) +
 				" "+ fecha.get(GregorianCalendar.HOUR_OF_DAY)+ ":"+ fecha.get(GregorianCalendar.MINUTE)+":"+ fecha.get(GregorianCalendar.SECOND));
 	}  
-
-	// 9.1 - METODO traerFecha RECIBE GREGPRIAN CALENDAR  DEVUELVE UN STRING TIPO dd/mm/yyyy  ////////////////
 
 	public static String traeFecha(GregorianCalendar f){
 		f.setLenient(false);
@@ -520,32 +360,26 @@ public class Funciones {
 		dia = f.get(GregorianCalendar.DAY_OF_MONTH);
 		return "Hoy es: " + dia +"/" + mes + "/" + anyo + "  y " + calculoBisiesto(f);     
 	}
-
-	// 9.2 - METODO CALCULO BISISESTO  DEVUELVE STRING //////////////////////////////////
-
+	
 	public static String calculoBisiesto(GregorianCalendar f){
 		GregorianCalendar este = new GregorianCalendar();
 		int anyo = este.get(GregorianCalendar.YEAR); 
 		if ((anyo % 4 == 0) && (anyo % 100 == 0)  || (anyo % 400 == 0)){
-			return "El a�o es bisiesto";
+			return "El año es bisiesto";
 		}else {
-			return  "El a�o no es bisiesto";	
+			return  "El año no es bisiesto";	
 		}		
 	}
 
-	// 9.3 - METODO traerFechaCortaHoraMin  PREDETERMINADO     ////////////////////////////////////
-
 	public static String traerFechaCortaHoraMin(GregorianCalendar fecha){
-		String f =(fecha.get(GregorianCalendar.DAY_OF_MONTH) + "/" 	//armo el String fecha con todos los datos que necesito se muestren
+		String f =(fecha.get(GregorianCalendar.DAY_OF_MONTH) + "/"
 				+ (fecha.get(GregorianCalendar.MONTH)+1)	
 				+ "/" + fecha.get(GregorianCalendar.YEAR) 
 				+ "-" + fecha.get(GregorianCalendar.HOUR) 
 				+ ":" + fecha.get(GregorianCalendar.MINUTE)+ ":" + fecha.get(GregorianCalendar.SECOND));
 
-		return f;	//retorno fecha en formato String
+		return f;
 	}
-
-	// 9.4 - METODO calculaDiasEntreDosFechas ////////////////////////////
 
 	public int calculaDiasEntreDosFechas(){
 		int dias=0;
@@ -560,9 +394,6 @@ public class Funciones {
 		return dias;				
 	}
 
-
-	// 9.5 - METODO traerFechaHora   ///  DEVUELVE GREGORIAN CALENDAR FECHA
-
 	@SuppressWarnings("deprecation")
 	public static String traerFechaHora (GregorianCalendar fecha){
 		GregorianCalendar f1 = new GregorianCalendar(fecha.get(GregorianCalendar.YEAR), 
@@ -572,28 +403,16 @@ public class Funciones {
 		return f1.getTime().toLocaleString();
 	}
 
-
-	//  10 - METODO traerFechaProximo (GregorianCalendar fecha, int cantDias) :GregorianCalendar  LE SUMA CANTIDAD DE DIAS
-	//	EJEMPLO: traerFechaProximo (new GregorianCalendar(2016,7,21) , 7) ------> new GregorianCalendar(2016,7,28)
-
 	public static GregorianCalendar traerFechaProximo(GregorianCalendar fecha, int cantDias){
 		int dia = fecha.get(GregorianCalendar.DAY_OF_MONTH) + cantDias;
 		fecha = aGregorianCalendar(fecha.get(GregorianCalendar.YEAR), fecha.get(GregorianCalendar.MONTH)+1, dia);
 		return fecha;
 	}
 
-
-	/**  10.1 -  METODO  traerFechaProx            ******************************************/	
-
 	public static String traerFechaProx(LocalDate fecha, TemporalAmount cantDias){
-		fecha.plus(cantDias); //USO plus PARA AGREGARLE LOS DIAS QUE QUIERO A MI FECHA
-		return traerFechaCorta(fecha); //USO EL METODO TRAER FECHA CORTA PARA TRAER LA FECHA CON LOS DIAS AGREGADOS
+		fecha.plus(cantDias);
+		return traerFechaCorta(fecha);
 	}
-	
-	/*********************************************************************************************/
-
-
-	// 11 - METODO esDiaHabil (GregorianCalendar fecha) : boolean  (fecha de hoy) //  CONSIDERAMOS HABIL DE LUNES A VIERNES   //////////////////
 
 	public static boolean esDiaHabil(GregorianCalendar fecha){
 		boolean habil = false;
@@ -602,12 +421,9 @@ public class Funciones {
 		dia = fecha.get(GregorianCalendar.DAY_OF_WEEK);
 		if(dia>1 && dia <7 ){
 			habil = true;
-		} // end_if
+		}
 		return habil;
-	} // end_public   
-
-
-	//  11.1 - METODO  esHabil/////////////////////////////////////////////////////////////////////
+	}
 
 	public static boolean esHabil(GregorianCalendar fecha){
 		boolean habil = false;
@@ -615,36 +431,26 @@ public class Funciones {
 		dia = fecha.get(GregorianCalendar.DAY_OF_WEEK)-1;
 		if(dia >=2 && dia <= 6){
 			habil = true;
-		} // end_if
+		}
 		return habil;
-	} // end_public
-
-	///////////////////////////////////////////////////////////////////////////
-
-
-	// 12 - METODO traerDiaDeLaSemana   DEVUELVE EL DIA DE LA SEMANA EN LETRAS  /////////////////////////////////////////////////////////
+	}
 
 	public static String traerDiaDeLaSemana(GregorianCalendar fecha){
-		int dia = 0; //inicializo una variable del tipo int para el dia de la semana del gregorianCalendar
+		int dia = 0;
 		dia = fecha.get(GregorianCalendar.DAY_OF_WEEK)-1;
 		//creo un array con los dias de la semana
-		String vdia[] = {"Domingo","Lunes","Martes","Miercoles","Jueves","Viernes","Sabado"}; 
-		return vdia[dia]; //al array de dias de la semana le asigno la posicion del entero dia
-	} // end_publi
-
-
-	// 13 - METODO traerMesEnLetras  DEVUELVE EL MES EN LETRAS////////////////////////////////////////////////////////
+		String vdia[] = {"Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"}; 
+		return vdia[dia];
+	}
 
 	public static String traerMesEnLetras(GregorianCalendar fecha){
 		int mes = 0;
-		mes = fecha.get(GregorianCalendar.MONTH); //traigo el mes de la fecha
-		//en un array de string cargo los meses
-		String vmes[] = {"Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto",
-				"Septiembre","Octubre","Noviembre","Diciembre"};
-		return vmes[mes]; //el mes de la fecha lo convierto en la posicion de mi array y me devuelve el mes en letras
-	} // end_public	
+		mes = fecha.get(GregorianCalendar.MONTH);
+		String vmes[] = {"Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto",
+				"Septiembre", "Octubre", "Noviembre", "Diciembre"};
+		return vmes[mes];
+	}
 
-	// 13.1 - METODO traerMesLetras SOBRECARGADO//////////////////////////////////////
 	public static String traerMesLetras(int anio, int mes){
 		int mesint = 0;  //en un array de string cargo los meses
 		String mes1[] = {"Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio",	
@@ -652,9 +458,6 @@ public class Funciones {
 		//el mes de la fecha lo convierto en la posicion de mi array y me devuelve el mes en letras
 		return mes1[mesint+1]; 
 	}
-
-	// 13.2 - METODO enVigencia 
-	// DETERMINA SI LA FECHA PASADA POR PARAMETRO ESTA ENTRE DOS FECHAS DETERMINADAS POR EL METODO ///////////
 
 	public static boolean enVigencia(GregorianCalendar fecha){
 		boolean vigente=false;
@@ -666,8 +469,6 @@ public class Funciones {
 		return vigente;
 	}	
 	
-// 13.3 - METODO enVigencia 
-// DETERMINA SI LAS FECHAS PASADAS POR PARAMETRO TIENEN ENTRE ELLAS LA FECHA OBTENIDA POR EL METODO ///////////	
 	public static boolean enVigencia(GregorianCalendar f1, GregorianCalendar f2){
 		boolean valida = false;
 		GregorianCalendar fecha = new GregorianCalendar();
@@ -677,9 +478,6 @@ public class Funciones {
 		return valida;
 	}
 	
-	// 13.4 -METODO esAnterior
-	// DETERMINA SI LA FECHA ES ANTERIOR A LA ACTUAL  //////////
-
 	public static boolean esAnterior(GregorianCalendar fecha1) throws Exception{
 		boolean anterior = false;
 		GregorianCalendar fecha = new GregorianCalendar(); 
@@ -689,9 +487,7 @@ public class Funciones {
 			throw new Exception("La Fecha NO es valida");
 		}
 		return anterior;
-	}	
-
-	// 14 - METODO traerFechaLarga ////////////////////////////////////////////////////////////////
+	}
 
 	public static String traerFechaLarga(GregorianCalendar fecha){
 		int dia = 0;
@@ -699,9 +495,7 @@ public class Funciones {
 		dia = fecha.get(GregorianCalendar.DAY_OF_MONTH);
 		anio = fecha.get(GregorianCalendar.YEAR);
 		return traerDiaDeLaSemana(fecha) + " " + dia + " de " + traerMesEnLetras(fecha) + " del " + anio;
-	} // end_public
-
-	// 14.1 - METODO traeFechaLarga ////////////////////////////////////////////////////////////////
+	}
 
 	public static String traeFechaLarga(GregorianCalendar fecha){
 
@@ -709,22 +503,16 @@ public class Funciones {
 				"  de  " + Funciones.mesForm(fecha) + "  de  " + fecha.get(GregorianCalendar.YEAR));
 	}
 
-	// 15 - METODO SON FECHAS IGUALES ///////////////////////////////////////////////////////////////
-
 	public static boolean sonFechasIguales(GregorianCalendar fecha, GregorianCalendar fecha1){
 		boolean iguales = false;
 		if(fecha.get(GregorianCalendar.DAY_OF_MONTH) == fecha1.get(GregorianCalendar.DAY_OF_MONTH) &&
 				fecha.get(GregorianCalendar.MONTH) == fecha1.get(GregorianCalendar.MONTH) &&
 				fecha.get(GregorianCalendar.YEAR) == fecha1.get(GregorianCalendar.YEAR) ) {
 			iguales = true;
-		} // end_if
+		}
 		return iguales;
-	} // end_public
+	}
 
-
-	//  15.1 - METODO  fechasIguales//////////////////////////////////////////////////////////////
-
-	//PASO COMO PARAMETROS LOS DOS OBJETOS FECHA 
 	public static boolean fechasIguales(GregorianCalendar fecha, GregorianCalendar fecha1){ 
 		boolean sonIguales = false;  //inicializo en false la variable sonIguales
 		if(fecha.equals(fecha1)){  //comparo las dos fechas con equals
@@ -732,11 +520,7 @@ public class Funciones {
 		}
 		return sonIguales; 	//retorno sonIguales		
 	}
-	//////////////////////////////////////////////////////////////////////////
-
-
-	// 16 - METODO SON FECHAS HORAS IGUALES ///////////////////////////////////////////////////////////////
-
+	
 	public static boolean sonFechasHorasIguales(GregorianCalendar fecha, GregorianCalendar fecha1){
 		boolean iguales = false;
 		if( fecha.get(GregorianCalendar.YEAR) == fecha1.get(GregorianCalendar.YEAR) &&
@@ -981,166 +765,62 @@ public class Funciones {
 		return Double.parseDouble(String.valueOf(n)); // DESDE UN STRING DEVUELVE UN DOUBLE
 	}
 
-	// 24a - METODO convertirAString   ////////////////////////////////////////////////
-	// valueOf CONVIERTE UN NUMERO EN STRING (EN ESTE CASO)
-	/*
-	 * El m�todo valueOf es un m�todo sobrecargado aplicable a numerosas clases de Java 
-	 * y que permite realizar conversiones de tipos. Veamos algunos ejemplos de uso.
-	 */
 	public static String convertirAString(int n){
-
-		String str;					//DECLARAMOS LA VARIABLE str DONDE GUARDAR EL NUEVO STRING
-
-		str = String.valueOf(n);		//PASAMOS EL NUMERO n A LA VARIABLE String str
-
-		return str;					//DEVUELVE EL NUMERO CONVERTIDO A String
+		String str;
+		str = String.valueOf(n);
+		return str;
 	}
-	/**********************************************************************************************************/
 	
-	 public static String imprimeFecha(GregorianCalendar FechaHoraSalida){
-		  String dia = Funciones.traerDiaDeLaSemana(FechaHoraSalida);
-		  String mes = Funciones.traerMesEnLetras(FechaHoraSalida);
-		  int diaNumero = FechaHoraSalida.get(Calendar.DAY_OF_MONTH);
-		  int anio = FechaHoraSalida.get(Calendar.YEAR);
-		  int hora = FechaHoraSalida.get(Calendar.HOUR_OF_DAY);
-		  int minuto = FechaHoraSalida.get(Calendar.MINUTE);
-		  return dia + " " + diaNumero + " de " + mes + " de " + anio + " - " + hora + ":" + minuto;
-		 } // end_public_imprimeFecha
-	 
-	/*****************************************************************************************************************/
-	 
-/********************************************************************************************************************/
-		//cuenta de digitos
-		public static String verificarCuenta(String cuenta) throws Exception {
+	public static String imprimeFecha(GregorianCalendar FechaHoraSalida){
+		String dia = Funciones.traerDiaDeLaSemana(FechaHoraSalida);
+		String mes = Funciones.traerMesEnLetras(FechaHoraSalida);
+		int diaNumero = FechaHoraSalida.get(Calendar.DAY_OF_MONTH);
+		int anio = FechaHoraSalida.get(Calendar.YEAR);
+		int hora = FechaHoraSalida.get(Calendar.HOUR_OF_DAY);
+		int minuto = FechaHoraSalida.get(Calendar.MINUTE);
+		return dia + " " + diaNumero + " de " + mes + " de " + anio + " - " + hora + ":" + minuto;
+	}
 	
-			String nCuenta = cuenta.substring(0,10) + cuenta.substring(11); //String sin barra
-			int[] digitos = new int [nCuenta.length()];
-			if(digitos.length != 11){ // 11 DIGITOS | POSICIONES DE 0 A 11
-				throw new Exception("1)ERROR: Nro.de.Cuenta invalido, no tiene 11 digitos " + cuenta);
-			} // end_if
-			for (int i = 0; i< (nCuenta.length()-1); i++){
-				digitos[i] = nCuenta.charAt(i) - '0'; // con el for voy cargando cada numero en una posicion del array
-			} // end_for
-			int suma = 0; 
-			int	longitud = digitos.length;
-			for(int i = 0; i < longitud-1; i++) {
-			    int digito = digitos[i];
-			   
-			    if(i % 2 == 1) {
-			    	digito = digito * 2;
-			    	
-				    if(digito > 9){
-				    	digito = digito - 9;				    	
-				    } // end_if
-			//	    System.out.println(digito);
-			    	suma = suma + digito;
-			    } // end_if
-			    else{
-			    	suma = suma + digito;
-		//	    	System.out.println(suma);
-			    }
-			} // end_for
-	//		System.out.println("\n"+ suma);  // prueba de resultado
-			suma = suma * 9;
-			suma = suma % 10;
-			int verificador = Integer.parseInt(cuenta.substring(11));
-			if(suma != verificador){
-				throw new Exception ("\n2)ERROR: Numero de cuenta invalido: "+  cuenta);
-			} // end_if
-			return cuenta;
-		} // end_public_verificacionCuenta
-
-/*****************************************************************************************************************/
-	// METODO ES PAR
-	public static boolean esPar(int n){
+	public static boolean esPar(int n) {
 		boolean par;
 		if( n % 2 == 0){
 			par = true;
-		}
-		else{
+		} else {
 			par = false;
 		}			
-		return par; //un solo return por metodo
+		return par;
 	}
-
-	//**********************************************************
-	// METODO NUMERO PRIMO():boolean
 
 	public static boolean esPrimo(int n){
 		boolean primo = true;
-		int s=2;
-		if ( n % s == 0 || n == 1 ){
-			if ( n % s == 0 ){
+		int s = 2;
+		if (n % s == 0 || n == 1) {
+			if (n % s == 0){
 				primo = false;
-			} 
-			s++;
-		} 
-		return primo;
-	} 
-	/*******************************************************************************************/
-	//**********************************************************
-	// METODO pasarBase2 (): String
-
-	public static String pasarBase2(int n){
-		String resultado="";
-		while(n >= 1){	// mientras n no sea menor a 1 hacemos
-			resultado= n%2 + resultado; // en el String resultado vamos cargando el resto
-			// de hacer la division por 2 del numero y cada vuelta el nuevo resto se 
-			// carga adelante del anterior formando una cadena o String de atras hacia adelante
-			n=n/2;	//luego dividimos el numero por 2 y almacenamos el resultado en n
-			//para poder seguir dividiendo el numero
-		}
-		return resultado; //devuelve el String con el numero binario
-	}
-
-	//*******************************************************
-	// METODO para calcular factorial 
-	public static int calcularFactorial(int n) {
-		int factorial=1;		//inicializo factorial en 1 (entonces si n=0 el factorial sera 1				
-		if (n>0){		//si n es mayor que cero
-			for (int i = 1; i <= n; i++) {	//recorro desde 1 hasta n incrementando en 1
-				factorial *= i;   //multiplico el numero por todos los numeros incrementados desde 1 hasta n
 			}
+			s++;
 		}
-		if (n<0){		//si n es menor que cero entonces
-			factorial = -1;	//factorial ser� menos uno (-1)
-		}
-		return factorial;	//retorno el valor de factorial
+		return primo;
 	}
-	/////////////////////////////   2019   /////////////////////////////////////////
-	
-	// METODO factorial  2019
+
 	public static int factorial(int n) {
-		if (n<=1){		//si n es menor o iugal 1
-			return 1;	//factorial ser� uno (1)
-		}else{
+		if (n<=1) {
+			return 1;
+		} else {
 			return n * factorial(n-1);
 		}	
 	}
 	
-/**	public static String calcularMayor(Persona p1, Persona p2){
-		if (p1.calcularEdad() > p2.calcularEdad()){
-			return (p1.getNombre());
-		}else{
-			return (p2.getNombre());
-		}
-	}  **/
-
-	///////////////////////////////////////////////////////////////////////////////////
-	///////////////////////////////////////////////////////////////////////////////////
-
-	//25 - METODO validarSexo   //////////////////////////////////////////////////////
 	public static boolean validarSexo(char sex) throws Exception{
 		boolean sexoValido=false;
 		if(sex=='M'||sex=='F' || sex=='m' || sex=='f'){			
 			sexoValido=true;
-		}else{
+		} else {
 			throw new Exception("Sexo mal ingresado");
 		}
 		return sexoValido;
 	}
 
-	//25.1 METODO  esSexoValido    /////////////////////////////////////
 	public static boolean esSexoValido(char c){ 
 		String diccionario_sexo = "FfMm";
 		boolean sexoValido = false;
@@ -1152,10 +832,6 @@ public class Funciones {
 		}
 		return sexoValido;  							
 	}	
-
-	////////////   TEST CUIL INCORPORADO A FUNCIONES   //////////////////////////////////////////////////
-
-	///////  METODO arrayCuil ///////////////////////////////////////////////////////////////////////////
 
 	public static int[] arrayCuil(String stringCuil){
 		int xcuil[] = new int [3];
@@ -1184,50 +860,42 @@ public class Funciones {
 			previo = xdni%divisor;
 			xdni = (long) previo;
 			divisor = divisor/10;
-		} // end_for
+		}
 		cuil[10] = xcuil[2];
 		return cuil;
-	} // end_public_arrayCuil
-
-	/////  METODO validarCuil   /////////////////////////////////////////////////////////////////////////
+	}
 
 	public static boolean validarCuil(String stringCuil) throws Exception {
 		boolean verifica = false;
 		int[] cuil = arrayCuil(stringCuil); 
 		if (cuil.length != 11) { 
 			throw new Exception("El Cuil NO es valido");
-		} // end_if
-		else {
+		} else {
 			int[] mult = { 5, 4, 3, 2, 7, 6, 5, 4, 3, 2 };
 			int valor1 = 0;
 
 			for (int i = 0; i < mult.length; i++) {
 				valor1 += cuil[i] * mult[i];
-			} // end_for
+			}
 			int mod = 0;   int digito = 0;
-			mod = valor1 % 11; // NOS DA EL VALOR ENTERO DEL RESTO DE LA DIVISION
+			mod = valor1 % 11;
 			int valor3 = 11 - mod;
 			if (valor3 == 11) {
 				digito = 0;
-			} // end_if 
-			else if (valor3 == 10) {
+			}else if (valor3 == 10) {
 				digito = 9;
-			} // end_else_if
-			else {
+			}else {
 				digito = valor3;
-			} // end_else
+			}
 			if (digito == cuil[10]){
 				verifica = true;
 			}else{
 				throw new Exception("El Cuil NO es valido");
-			}
-		} // end_else
+			} // end_else
 		return verifica;
-	} // end_public_validarCuil
+	}
 
-	/////  METODO validarDominio   /////////////////////////////////////////////////////////////////////////
-
-	public static boolean validarDominio(String dominio) throws Exception{
+	public static boolean validarDominio(String dominio) throws Exception {
 		boolean patente = false;
 		if(Funciones.esCadLetra(dominio.substring(0, 2)) && Funciones.esCadNumeros(dominio.substring(3, 5))){
 			patente = true;
@@ -1237,71 +905,24 @@ public class Funciones {
 		return patente;
 	}
 
-	////////////////////////////  FIN TRABAJO PRATICO DE LA GUIA  2    ////////////////////////////////////////////////
-	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-
-
-	////////////////////////////////  PRACTICO 4 ORDENAMIENTO DE ARRAYS Y USO DE INTERFACES   /////////////////////////// 	
-	//  GENERAR ARRAY ///////////////
-	public static int[] generarArray(int inicio, int fin, int cantidad){   //  GENERAMOS UNA SECUENCIA ORDENADA Y LUEGO LA MEZCLAMOS	
-		int[] array=crearSecuencia(inicio, fin, cantidad);             // ESTO ES PARA EVITAR ELEMENTOS REPETIDOS
-		mezclarArray(array);
-		return array;
-	}
-
-	//  MEZCLAR ARRAY  //////////////////////////////										
-	private static void mezclarArray(int[] array){    //  RECIBE UN ARRAY Y LO MEZCLA (INTERCAMBIA LOS ELEMENTOS)
-		int indice, temp;
-		Random random = new Random();                  //  EN EL LUGAR, AL AZAR 
-		for (int i = array.length - 1; i > 0; i--){
-			indice = random.nextInt(i + 1);
-			temp = array[indice];
-			array[indice] = array[i];
-			array[i] = temp;
-		}
-	}
-
-
-	// CREA UNA SECUENCIA DE CANTIDAD DE ENTEROS DE INICIO A FIN SE GENERA CON INTERVALOS IGUALES ENTRE VALORES
-
-	public static int[] crearSecuencia(int inicio, int fin, int cantidad){
-		int[] array = new int[cantidad];
-		int salto=(fin-inicio)/cantidad;
-		for (int i=0; inicio < fin; i++){
-			array[i] = inicio+=salto;
-		}
-		return array;
-	}
-	// MOSTRAMOS EL ARRAY  ////////////////////////////		
-	public static void mostrarArray(String mensaje, int[] array){
-		System.out.println(mensaje+Arrays.toString(array));
-	}
-
-	// METODO PARA INTERCAMBIAR EN UN ARRAY SE USA EN VARIOS METODOS DE ORDENAMIENTO  ///////////////////
-	protected void intercambiar(int[] array, int indice1, int indice2){  // METODO AYUDANTE, VARIOS ALGORITMOS LO USAN		                  
-		int tmp = array[indice1];         // INTERCAMBIA LOS VALORES DE LAS POSICIONES   
-		array[indice1] = array[indice2];   // DE LOS INDICE 1 E INDICE 2 EN EL ARRAY  
+	protected void intercambiar(int[] array, int indice1, int indice2){		                  
+		int tmp = array[indice1];  
+		array[indice1] = array[indice2];
 		array[indice2] = tmp;
 	}
 
-	//  METODO DE LLAMADA A ORDENAR ARRAYS  CON BURBUJA, QUICK SORT, Y TODOS  ///////////
 	public int[] ordenar(int[] array) {
-		return quickSort(array, 0, array.length);  // SOLO SE CAMBIA AQUI POR EL ORDENAMIENTO QUE USEMOS
+		return quickSort(array, 0, array.length);
 	}
 
-	// VERSION RECURSIVA DE QUICKSORT  ////////
-
 	public int[] quickSort(int[] arr, int comienzo, int fin) {
-		if (fin - comienzo < 2) return arr;			 //CLAUSULA DE FINALIZACION
+		if (fin - comienzo < 2) return arr;
 		int p = comienzo + ((fin-comienzo)/2);
 		p = particionar(arr,p,comienzo,fin);
 		quickSort(arr, comienzo, p);
 		quickSort(arr, p+1, fin);
 		return arr;
 	}
-
-	//  METODO PARA EFECTUAR LA PARTICION EN EL PIVOTE  ////////////////
 
 	private int particionar(int[] array, int p, int comienzo, int fin) {
 		int c = comienzo;
@@ -1322,316 +943,54 @@ public class Funciones {
 		intercambiar(array,fin-1,indice);
 		return indice;
 	}
-	////////////////////////   FIN DE ORDENAMIENTO "QUICK SORT"   ///////////////////////////////
-
-	////////////////// METODO DE ORDENAMIENTO "BURBUJA"  ////////////////////////////////////////////
 
 	public int[] burbuja(int[] array) {
-		int lenD = array.length;  // DEFINO VARIABLE DE LONGITUD DEL ARRAY
+		int lenD = array.length;
 		boolean ordenado=false;
-		for(int i=0; i<lenD && !ordenado; i++){  //RECORRO EL ARRAY MIENTRAS ORDENADO = FALSE
+		for(int i=0; i<lenD && !ordenado; i++){
 			ordenado=true;
-			for(int j=(lenD-1); j>=(i+1); j--){  //RECORRO EL ARRAY DESDE ATRAS MIENTRAS 
-				if(array[j] < array[j-1]){  // SI ES MENOR AL ANTERIOR, 
-					ordenado=false;				// NO ESTA ORDENADO
-					intercambiar(array,j,j-1);  // APLICO FUNCION INTERCAMBIAR POSICION EN ARRAY
+			for(int j=(lenD-1); j>=(i+1); j--){
+				if(array[j] < array[j-1]){
+					ordenado=false;
+					intercambiar(array,j,j-1);
 				}
-			}// END FOR
-		} //END FOR
+			}
+		}
 		return array;
-	} // END PUBLIC INT BURBUJA
+	}
 
-	////////////////////////////////////   FIN METODO DE ORDENAMIENTO "BURBUJA"  ////////////////////////////////////////////	
-
-	// METODO DE INSERCION	////////////////////////////////////////////
-	public int[] insercion(int[] array) {   // METODO DE INSERCION		
+	public int[] insercion(int[] array) {
 		int p, j;
 		int aux;
-		for (p = 1; p < array.length; p++){ 			   //  DESDE EL SEGUNDO ELEMENTO HASTA EL FINAL,
-			aux = array[p]; 								//   GUARDAMOS EL ELEMENTO Y 
-			j = p - 1;				 						//  EMPEZAMOS A COMPROBAR CON EL ANTERIOR  
-			while ((j >= 0) && (aux < array[j])){ 	//  MIENTRAS QUEDEN POSICIONES Y EL VALOR DE AUX SEA MENOR QUE LOS DE LA IZQUIERDA,  
-				array[j + 1] = array[j];     			// SE DESPLAZA A LA DERECHA EL VALOR DEL ARRAY
-				j--;                  					
+		for (p = 1; p < array.length; p++){
+			aux = array[p];
+			j = p - 1;
+			while ((j >= 0) && (aux < array[j])){
+				array[j + 1] = array[j];
+				j--;
 			}
-			array[j + 1] = aux; 				//  Y COLOCAMOS AUX EN SU LUGAR REEMPLAZANDOLO   
+			array[j + 1] = aux;  
 		}	
 		return array;
 	}
-	///////////////////  FIN METODO DE INSERCION	////////////////////////////////////////////
 
-	//  METODO JAVA DE ORDENACION POR SELECCION   ///////////////////////////////////////
-	public int[] seleccion(int[] array) {          //  METODO JAVA DE ORDENACION POR SELECCION 
+	public int[] seleccion(int[] array) {
 		int i, j, menor, pos;
-		for (i = 0; i < array.length - 1; i++) {   // TOMAMOS COMO MENOR AL PRIMERO DE LOS ELEMENTOS   
-			menor = array[i];						 //  QUE QUEDAN POR ORDENAR 
-			pos = i; 							   // Y GUARDAMOS SU POSICION
+		for (i = 0; i < array.length - 1; i++) {
+			menor = array[i]; 
+			pos = i;
 
-			for (j = i + 1; j < array.length; j++){ 	//  BUSCAMOS EN EL RESTO DEL ARRAY    
-				if (array[j] < menor) {				  // ALGUN ELEMENTO MENOR QUE EL ACTUAL SI ES MENOR
-					menor = array[j]; 				 // LO ASIGNAMOS COMO EL NUEVO MENOR
-					pos = j;                        //  GUARDAMOS LA POSICION DEL MENOR
+			for (j = i + 1; j < array.length; j++){
+				if (array[j] < menor) {
+					menor = array[j];
+					pos = j;
 				}
 			}
-			if (pos != i){							 // SI LA POS DEL MENOR YA NO ES LA DEL i ORIGINAL
-				intercambiar(array, i, pos);        //  SE LLAMA A INTERCAMBIAR POSICIONES   
-			}									//  ENTRE EL MENOR INDICE ANTERIOR Y EL NUEVO
+			if (pos != i){
+				intercambiar(array, i, pos);  
+			}
 		}
 		return array;
 	}
-
-
-	////////////////////////////////////////  FIN  PRACTICO 4   /////////////////////////////////////////////
-	/////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-/***********************************************************************************************	
- * try{
-			
-	}catch(Exception e){
-		System.out.println( "Excepcion: " + e.getMessage());
-	}
-/*********************************************************************************************
-  //METODO DE IMPRESION DE LISTAS FUERA DEL MAIN
-	public static void impresion(List<Pelicula> lista){ 
-		for ( int i = 0; i < lista.size(); i++) {
-			System. out.println(lista.get(i));
-		}
-	}        
-
-	// METODO EQUALS REDUCIDO
-	 public boolean equals(Producto producto){
-		return (idProducto == producto.getIdProducto());
-	}   
-	
-	public boolean equals(Cliente obj){
-		return (idCliente == obj.getIdCliente());
-	}  
-	
-// 1) traerCliente(long dni): Cliente
-	public Cliente traerCliente(long dni) throws Exception{
-		int i=0;
-		boolean encontrado = false;
-		while( i < lstClientes.size() && encontrado == false){
-			if(lstClientes.get(i).getDni()== dni){
-				encontrado = true;
-			}else{
-				i++;
-			}
-		}
-		if(encontrado == false){
-			throw new Exception("No existe el cliente con dni:"+dni+"buscado");
-		}
-		return lstClientes.get(i);
-	}
-	
-// 2) agregarCliente(String nombre, String apellido, String email, long dni): boolean
-	public boolean agregarCliente(String nombre, String apellido, String email, long dni) throws Exception{
-		boolean agregado = false;
-		int idCliente = 0; int i = 0;
-		for(i=0; i<lstClientes.size(); i++){
-			if (lstClientes.get(i).getDni() == dni){
-				agregado = true;
-				throw new Exception ("El cliente con dni: "+dni+" ya se encuentra en la Lista.");
-			} // end_if
-			if(idCliente < lstClientes.get(i).getIdCliente()){
-				idCliente = lstClientes.get(i).getIdCliente();
-			}
-		} // end for
-		idCliente++;
-		if(agregado == false){				
-			lstClientes.add(new Cliente(idCliente, nombre, apellido, email, dni));
-			agregado = true;	
-		}
-		return agregado;
-	}	
-	
-//  100) ELIMINAR CLIENTE  /////////////////////////////////
-	public boolean eliminarCliente(Cliente cliente) throws Exception{
-		boolean resultado = false;
-		for(int i=0;i<lstClientes.size();i++){
-			if (lstClientes.get(i).getDni() == cliente.getDni()){
-				lstClientes.remove(i);
-				resultado = true;				
-			} // end_if
-			if(resultado == false){
-				throw new Exception ("El cliente con dni: "+cliente.getDni()+" no se encuentra en la Lista.");
-			}
-		} // end_for	
-		return resultado;
-	}
-	
-// 9) METODO agregarCompra(Cliente cliente, Producto producto, GregorianCalenda fechaHora, double cantidad): boolean
-	public boolean agregarCompra(Cliente cliente, Producto producto,GregorianCalendar fechaHora, double cantidad)throws Exception{
-		boolean agregado = false;     int i=0;
-		for(i=0; i<lstTarjetas.size(); i++){
-			if(lstTarjetas.get(i).getCliente().equals(cliente)){
-			//if(lstCompras.get(i).getProducto().equals(producto)){
-				agregado = true;
-				lstTarjetas.get(i).getLstCompras().add(new Compra(producto, fechaHora, cantidad));
-			}
-		}
-		if(!agregado){
-			throw new Exception("\nNo se agrego la compra");
-		}
-		return agregado;
-	}
-	
-// 10) traerCompras(Cliente cliente): List<Compra>
-	public List<Compra> traerCompras(Cliente cliente){
-		List<Compra> lista = new ArrayList <Compra>();
-		int i =0, j =0;
-		for(i=0; i<lstTarjetas.size(); i++){
-			if(lstTarjetas.get(i).getCliente().equals(cliente)){
-				for(j=0; j<lstTarjetas.get(i).getLstCompras().size(); j++){
-					lista.add(lstTarjetas.get(i).getLstCompras().get(j));
-				}
-			}
-		}// end for	
-		return lista;
-	}
-
-////////////// TIEMPO DE EJECUCION  ////////////////////////////////////////////////////////////////////////
- 
- public int tiempoDeEjecucion() {
-		int tiempo = 0;   
-		GregorianCalendar c = new GregorianCalendar();
-		c.setTimeInMillis(fechaDeFin.getTime().getTime() - fechaDeInicio.getTime().getTime());
-		tiempo=c.get(GregorianCalendar.DAY_OF_YEAR);
-		if(tiempo == 365 ){
-		 	tiempo = 0;
-		}
-		return tiempo;
-	}
-	
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-	 *********************************************************************************************************/
-
-	///////////////////////////////////////   METODOS PARA MATRICES   /////////////////////////////////////////
-	///////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-	private double[][] matrizA;
-
-	@Override
-	// METODO TOSTRING PARA MATRIZ BIDIMENSIONAL//////////
-	public String toString() {
-		String texto = "\n";
-		for (int i = 0; i < matrizA.length; i++) {
-			for (int j = 0; j < matrizA.length; j++) {
-				// texto+="\t "+matrizA[i][j];
-				texto += "\t " + (double) Math.round(1000 * matrizA[i][j]) / 1000;
-			}
-			texto += "\n";
-		}
-		texto += "\n";
-		return texto;
-	}/////////////////////////////////////////////////////
-
-	// METODO SUMA DE MATRICES
-	public double[][] sumar(double[][] matrizB) { // recibe una matriz double
-		double[][] nuevam = new double[matrizA.length][matrizA.length];
-		for (int i = 0; i < matrizA.length; i++) { // recorre la matriz objeto [i]
-			for (int j = 0; j < matrizA.length; j++) { // recorre la matriz objeto [j]
-				nuevam[i][j] = matrizA[i][j] + matrizB[i][j]; // en la matriz double se ira
-				// sumando el valor de la matriz objeto a la matriz objeto
-				// que recibo cuando ambos subindices coincidan
-			}
-		}
-		return nuevam;
-	}
-
-	// METODO RESTA DE MATRICES
-	public double[][] restar(double[][] matrizB) { // recibe una matriz double
-		double[][] nuevam = new double[matrizA.length][matrizA.length];
-		for (int i = 0; i < matrizA.length; i++) { // recorre la matriz objeto [i]
-			for (int j = 0; j < matrizA.length; j++) { // recorre la matriz objeto [j]
-				nuevam[i][j] = matrizA[i][j] - matrizB[i][j]; // en la matriz double se ira
-				// restando el valor de la matriz objeto a la matriz objeto que recibo
-				// cuando ambos subindices coincidan
-			}
-		}
-		return nuevam;
-	}
-
-	// METODO TRANSPUESTA
-	public double[][] matrizTranspuesta(){
-		double[][]nuevam=new double[matrizA.length][matrizA.length];
-		for(int i=0; i<matrizA.length; i++){
-			for(int j=0; j<matrizA.length; j++){
-				nuevam[i][j]=matrizA[j][i];
-			}    
-		}
-		return nuevam;	// retorno de la nueva matriz, sino no funciona
-	}
-	/*
-	public double[][] matrizTranspuesta(double[][] matriz) {
-		double[][] nuevam = new double[matriz[0].length][matriz.length];
-		for (int i = 0; i < matriz.length; i++) {
-			for (int j = 0; j < matriz.length; j++)
-				nuevam[i][j] = matriz[j][i];
-		}
-		return nuevam;
-	}   */
-
-	// PRODUCTO DE UN ESCALAR POR UNA MATRIZ
-	public double[][] multiplicar(double n) {
-		double[][] nuevam = new double[matrizA.length][matrizA.length];
-		for (int i = 0; i < matrizA.length; i++){
-			for (int j = 0; j < matrizA.length; j++){
-				nuevam[i][j] = matrizA[i][j] * n;
-			}
-		}   
-		return matrizA;
-	} 
-
-	// PRODUCTO DE MATRICES
-	public double[][] multiplicar(double[][] matrizB) {
-		double[][] nuevam = new double[matrizA.length][matrizA.length];
-		for (int i = 0; i < matrizA.length; i++) {
-			for (int j = 0; j < matrizB.length; j++) {
-				for (int k = 0; k < matrizA.length; k++) { // puede ser columnasA o
-					// filasB ya que deben ser iguales entonces tb podriamos poner for ( int k = 0; k < matrizB.length; k++
-					// ) que son las filas de la matriz B
-					nuevam[i][j] += matrizA[i][k] * matrizB[k][j]; 
-					// el signo += implica que en cada posicion de la nueva matriz vamos a ir haciendo la sumatoria de los productos de cada
-					// elemento de la fila de la matriz a por cada elemento de la columna de la matriz b
-				}
-			}
-		}
-		return nuevam;
-	}
-
-
-
-	//////////////////////////////////   FIN METODOS PARA MATRICES   ////////////////////////////////////////////////////////
-	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-
-
-}  //  END PUBLIC CLASS FUNCIONES
-
-/*
-
-if (cadena.matches("[0-9]*")){
-       	System.out.println("\nEs una cadena de Numeros");
-       	numero = true;
-       }else{
-       	  System.out.println("\nNo es cadena de Numeros");
-       	  throw new Exception("ERROR: No es cadena de numeros");
-       } 
-
-  if (cadena.matches("[a-z]+")){
-       	System.out.println("\nEs una cadena de Letras");
-       	numero = true;
-       }else{
-       	  System.out.println("\nNo es una cadena Letras");
-       	  throw new Exception("ERROR: No es cadena de Letras");
-       }    	     
-       
- */
-
-
-
-
-
+}
 
