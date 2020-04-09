@@ -28,3 +28,21 @@ public class ContactoABM {
 		dao.eliminar(c);
 	}
 }
+
+/*
+
+Crear la clase EventoDao
+En EventoABM agregar los casos de uso:
+Agregar un cliente a un evento
+A partir de los parámetro idCliente y idEvento:
+traer el cliente
+	traer evento y sus clientes
+	agregar el cliente a un evento y actualizar.
+	Eliminar un cliente a un evento y actualizar
+
+En ClienteABM agregar los casos de uso:
+	Traer un cliente y los eventos
+	Agregar un evento a un cliente y actualizar
+	Eliminar un evento a un cliente
+Realizar los test de los casos de uso
+*/
