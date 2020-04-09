@@ -1,6 +1,5 @@
 package com.company.datos;
 import java.time.LocalDate;
-import com.company.funciones.Funciones;
 
 public class Cliente {
 	private long idCliente;
