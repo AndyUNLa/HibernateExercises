@@ -2,7 +2,7 @@
 
 ### :gear: Los archivos para crear las bases de datos se encuentran en el directrio _sql_
 
-## Cada directorio contiene un tipo de ejercicio:
+## El directorio _exercices_ contiene cada uno de los ejercicios resueltos:
 Ej: Abrir el ejercicio __hibernate-uno-a-uno__ con ___VSCode___
 ```bash
 cd exercises
