@@ -4,18 +4,22 @@ import java.util.List;
 import java.util.Set;
 import com.company.datos.Cliente;
 import com.company.datos.Evento;
+import com.company.funciones.LoggerWrapper;
 import com.company.negocio.ClienteABM;
 import com.company.negocio.EventoABM;
+
 /*
  * Test que trae todos los eventos de un cliente
  */
 public class TestTraerClienteYEventos {
     public static void main(String[] args) {
+        String className = TestAgregarEventoACliente.class.getName();
+        LoggerWrapper logger = LoggerWrapper.getInstance(className, true); // El 2do parámetro es para que hibernate no muestre los logs
         ClienteABM clienteABM = new ClienteABM();
         EventoABM eventoABM = new EventoABM();
         int dni = 14000000;
         Cliente c = clienteABM.traer(dni);
-        System.out.println("\n---> Traer eventos del Cliente=" + c + "\n\n");
+        logger.info("Traer eventos del Cliente=" + c + "\n\n");
         try {
             int cont = 1;
             List<Evento> list = eventoABM.traerEventos(c);
@@ -26,7 +30,7 @@ public class TestTraerClienteYEventos {
                 cont++;
             }
         } catch(Exception e) {
-            System.out.println(e.getMessage());
+            logger.error(e.getMessage());
         }
     }
 }

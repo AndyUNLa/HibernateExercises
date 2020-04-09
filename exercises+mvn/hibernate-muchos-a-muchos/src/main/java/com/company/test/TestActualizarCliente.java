@@ -1,25 +1,32 @@
 package com.company.test;
 import com.company.datos.Cliente;
+import com.company.funciones.LoggerWrapper;
 import com.company.negocio.ClienteABM;
 
+/*
+ * Test que actualiza un cliente dado su ID
+ */
 public class TestActualizarCliente {
 	public static void main(String[] args) {
+		String className = TestAgregarEventoACliente.class.getName();
+        LoggerWrapper logger = LoggerWrapper.getInstance(className, true);
 		ClienteABM abm = new ClienteABM();
 		long id = 1;
 		// traer el obj a modificar
 		Cliente c = abm.traer(id);
-		System.out.println("Cliente a Modificar -->" + c);
+		logger.info("Modificar cliente: " + c + "\n\n");
 		// modificar por set los atributos
 		c.setDni(35000001);
 		try {
 			abm.modificar(c);
+			logger.info("Cliente modificado exitosamente");
 		} catch(Exception e) {
-			System.out.println(e.getMessage());
+			logger.error(e.getMessage());
 		}
 		
-		 // update del objeto
+		// Comprobar cliente modificado
 		int dni = 35000001;
 		Cliente cModif = abm.traer(dni);
-		System.out.println("Cliente Modificado -->" + cModif);
+		logger.info("Cliente Modificado -->" + cModif);
 	}
 }
