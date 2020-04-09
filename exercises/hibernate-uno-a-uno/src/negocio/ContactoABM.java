@@ -1,5 +1,4 @@
 package negocio;
-import java.time.LocalDate;
 import dao.ContactoDao;
 import datos.Contacto;
 import datos.Cliente;
