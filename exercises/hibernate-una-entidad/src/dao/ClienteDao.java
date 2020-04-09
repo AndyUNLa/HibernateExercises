@@ -5,6 +5,7 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 import datos.Cliente;
 
+
 public class ClienteDao {
 	private static Session session;
 	private Transaction tx;
