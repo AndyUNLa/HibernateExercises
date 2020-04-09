@@ -1,4 +1,4 @@
-package com.company.funciones;
+package funciones;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
